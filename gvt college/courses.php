@@ -1,266 +1,97 @@
+<?php
+require_once('../admin/process/conn.php');
+
+// Get the filter category if it is set in the URL, default to 'All'
+$categoryFilter = isset($_GET['category']) ? $_GET['category'] : 'All';
+
+// Modify the SQL query to filter based on category
+if ($categoryFilter == 'All') {
+    $query = "SELECT * FROM courses";
+} else {
+    $query = "SELECT * FROM courses WHERE category = '$categoryFilter'";
+}
+
+$execute = mysqli_query($conn, $query);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-
-  <head>
-
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Template Mo">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-
-    <title>Education - List of Meetings</title>
-
-    <!-- Bootstrap core CSS -->
+    <title>Education - List of Courses</title>
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-
-    <!-- Additional CSS Files -->
     <link rel="stylesheet" href="assets/css/fontawesome.css">
     <link rel="stylesheet" href="assets/css/templatemo-edu-meeting.css">
     <link rel="stylesheet" href="assets/css/owl.css">
     <link rel="stylesheet" href="assets/css/lightbox.css">
-<!--
-
-TemplateMo 569 Edu Meeting
-
-https://templatemo.com/tm-569-edu-meeting
-
--->
-  </head>
-
+</head>
 <body>
 
-<?php 
- include './include/header.php'
- ?>
+<?php include './include/header.php'; ?>
 
- 
-
- 
-
-  <section class="meetings-page" id="meetings">
+<section class="meetings-page" id="meetings">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="row">
+        <div class="row">
             <div class="col-lg-12">
-              <div class="filters">
-                <ul>
-                  <li data-filter="*"  class="active">All Courses</li>
-                  <li data-filter=".soon">Mining</li>
-                  <li data-filter=".imp">Electrical</li>
-                  <li data-filter=".att">Telecommunication</li>
-                </ul>
-              </div>
+                <div class="filters">
+                    <ul>
+                        <li data-filter="*" class="<?= ($categoryFilter == 'All') ? 'active' : '' ?>"><a href="?category=All">All Courses</a></li>
+                        <li data-filter=".soon" class="<?= ($categoryFilter == 'Mining') ? 'active' : '' ?>"><a href="?category=Mining">Mining</a></li>
+                        <li data-filter=".imp" class="<?= ($categoryFilter == 'Electrical') ? 'active' : '' ?>"><a href="?category=Electrical">Electrical</a></li>
+                        <li data-filter=".att" class="<?= ($categoryFilter == 'Telecommunication') ? 'active' : '' ?>"><a href="?category=Telecommunication">Telecommunication</a></li>
+                    </ul>
+                </div>
             </div>
+
             <div class="col-lg-12">
-              <div class="row grid">
-                <div class="col-lg-4 templatemo-item-col all soon">
-                  <div class="meeting-item">
-                    <div class="thumb">
-                     
-                      <a href="meeting-details.php"><img src="assets/images/mining.jpg" alt=""></a>
-                    </div>
-                    <div class="down-content">
-                      
-                      <a href="meeting-details.php"><h4>Mining</h4></a>
-                      <p>The Mining Engineering course focuses on the extraction of natural resources, teaching students about mining processes, safety measures, and environmental impact, paving the way for careers in the mining industry.</p>
-                    </div>
-                  </div>
+                <div class="row grid">
+                    <?php
+                    // Loop through the results and dynamically display each course
+                    while ($record = mysqli_fetch_array($execute)) {
+                    ?>
+                        <div class="col-lg-4 templatemo-item-col all <?php echo strtolower($record['category']); ?>">
+                            <div class="meeting-item">
+                                <div class="thumb">
+                                    <a href="meeting-details.php"><img src="../admin/uploads/courses/<?php echo $record['image']; ?>" alt=""></a>
+                                </div>
+                                <div class="down-content">
+                                    <a href="meeting-details.php"><h4><?php echo $record['c_name']; ?></h4></a>
+                                    <p><?php echo $record['c_desc']; ?></p>
+                                </div>
+                            </div>
+                        </div>
+                    <?php } ?>
                 </div>
-                <div class="col-lg-4 templatemo-item-col all imp">
-                  <div class="meeting-item">
-                    <div class="thumb">
-                      
-                      <a href="meeting-details.php"><img src="assets/images/elect.jpg" alt=""></a>
-                    </div>
-                    <div class="down-content">
-                      
-                      <a href="meeting-details.php"><h4>Electrical</h4></a>
-                      <p>The Electrical Engineering diploma offers students comprehensive training in electrical systems, circuits, and power generation, preparing them for careers in the energy and automation sectors.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-4 templatemo-item-col all soon">
-                  <div class="meeting-item">
-                    <div class="thumb">
-                      
-                      <a href="meeting-details.php"><img src="assets/images/mining.jpg" alt=""></a>
-                    </div>
-                    <div class="down-content">
-                      
-                      <a href="meeting-details.php"><h4>Mining</h4></a>
-                      <p>The Mining Engineering course focuses on the extraction of natural resources, teaching students about mining processes, safety measures, and environmental impact, paving the way for careers in the mining industry.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-4 templatemo-item-col all att">
-                  <div class="meeting-item">
-                    <div class="thumb">
-                     
-                      <a href="meeting-details.php"><img src="assets/images/telecom.jpg" alt=""></a>
-                    </div>
-                    <div class="down-content">
-                      
-                      <a href="meeting-details.php"><h4>Telecommunication</h4></a>
-                      <p>The Telecommunication course at our institute provides students with in-depth knowledge of modern communication systems. It equips them with the skills needed to excel in the rapidly evolving field of telecommunication technology.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-4 templatemo-item-col all att">
-                  <div class="meeting-item">
-                    <div class="thumb">
-                     
-                      <a href="meeting-details.php"><img src="assets/images/mining.jpg" alt=""></a>
-                    </div>
-                    <div class="down-content">
-                      
-                      <a href="meeting-details.php"><h4>Telecommunication</h4></a>
-                      <p>The Telecommunication course at our institute provides students with in-depth knowledge of modern communication systems. It equips them with the skills needed to excel in the rapidly evolving field of telecommunication technology.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-4 templatemo-item-col all imp">
-                  <div class="meeting-item">
-                    <div class="thumb">
-                     
-                      <a href="meeting-details.php"><img src="assets/images/elect.jpg" alt=""></a>
-                    </div>
-                    <div class="down-content">
-                     
-                      <a href="meeting-details.php"><h4>Electrical</h4></a>
-                      <p>The Electrical Engineering diploma offers students comprehensive training in electrical systems, circuits, and power generation, preparing them for careers in the energy and automation sectors.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-4 templatemo-item-col all imp">
-                  <div class="meeting-item">
-                    <div class="thumb">
-                      
-                      <a href="meeting-details.php"><img src="assets/images/elect.jpg" alt=""></a>
-                    </div>
-                    <div class="down-content">
-                      
-                      <a href="meeting-details.php"><h4>Electrical</h4></a>
-                      <p>The Electrical Engineering diploma offers students comprehensive training in electrical systems, circuits, and power generation, preparing them for careers in the energy and automation sectors.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-4 templatemo-item-col all soon">
-                  <div class="meeting-item">
-                    <div class="thumb">
-                      
-                      <a href="meeting-details.php"><img src="assets/images/mining.jpg" alt=""></a>
-                    </div>
-                    <div class="down-content">
-                     
-                      <a href="meeting-details.php"><h4>Mining</h4></a>
-                      <p>The Mining Engineering course focuses on the extraction of natural resources, teaching students about mining processes, safety measures, and environmental impact, paving the way for careers in the mining industry.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-4 templatemo-item-col all att">
-                  <div class="meeting-item">
-                    <div class="thumb">
-                      
-                      <a href="meeting-details.php"><img src="assets/images/mining.jpg" alt=""></a>
-                    </div>
-                    <div class="down-content">
-                      
-                      <a href="meeting-details.php"><h4>Telecommunication</h4></a>
-                      <p>The Telecommunication course at our institute provides students with in-depth knowledge of modern communication systems. It equips them with the skills needed to excel in the rapidly evolving field of telecommunication technology.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
+
             <div class="col-lg-12">
-              <div class="pagination">
-                <ul>
-                  <li><a href="#">1</a></li>
-                  <li class="active"><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
-                </ul>
-              </div>
+                <div class="pagination">
+                    <ul>
+                        <li><a href="#">1</a></li>
+                        <li class="active"><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                    </ul>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
+</section>
 
+<?php include './include/footer.php'; ?>
 
-    <?php 
-   include './include/footer.php'
-   ?>
+<!-- Scripts -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/isotope.min.js"></script>
+<script src="assets/js/owl-carousel.js"></script>
+<script src="assets/js/lightbox.js"></script>
+<script src="assets/js/tabs.js"></script>
+<script src="assets/js/isotope.js"></script>
+<script src="assets/js/video.js"></script>
+<script src="assets/js/slick-slider.js"></script>
+<script src="assets/js/custom.js"></script>
 
-   
-  </section>
-
-
-  <!-- Scripts -->
-  <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <script src="assets/js/isotope.min.js"></script>
-    <script src="assets/js/owl-carousel.js"></script>
-    <script src="assets/js/lightbox.js"></script>
-    <script src="assets/js/tabs.js"></script>
-    <script src="assets/js/isotope.js"></script>
-    <script src="assets/js/video.js"></script>
-    <script src="assets/js/slick-slider.js"></script>
-    <script src="assets/js/custom.js"></script>
-    <script>
-        //according to loftblog tut
-        $('.nav li:first').addClass('active');
-
-        var showSection = function showSection(section, isAnimate) {
-          var
-          direction = section.replace(/#/, ''),
-          reqSection = $('.section').filter('[data-section="' + direction + '"]'),
-          reqSectionPos = reqSection.offset().top - 0;
-
-          if (isAnimate) {
-            $('body, php').animate({
-              scrollTop: reqSectionPos },
-            800);
-          } else {
-            $('body, php').scrollTop(reqSectionPos);
-          }
-
-        };
-
-        var checkSection = function checkSection() {
-          $('.section').each(function () {
-            var
-            $this = $(this),
-            topEdge = $this.offset().top - 80,
-            bottomEdge = topEdge + $this.height(),
-            wScroll = $(window).scrollTop();
-            if (topEdge < wScroll && bottomEdge > wScroll) {
-              var
-              currentId = $this.data('section'),
-              reqLink = $('a').filter('[href*=\\#' + currentId + ']');
-              reqLink.closest('li').addClass('active').
-              siblings().removeClass('active');
-            }
-          });
-        };
-
-        $('.main-menu, .responsive-menu, .scroll-to-section').on('click', 'a', function (e) {
-          e.preventDefault();
-          showSection($(this).attr('href'), true);
-        });
-
-        $(window).scroll(function () {
-          checkSection();
-        });
-    </script>
 </body>
-
-
-  </body>
-
 </html>

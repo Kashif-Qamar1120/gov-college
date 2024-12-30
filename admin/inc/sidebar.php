@@ -27,14 +27,18 @@
             <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                    <li><a href="events.php"><i class="fa fa-calendar-o"></i>Events<span class="fa fa-chevron-down"></span></a>
-                    </li>
-                    <li><a href="courses.php"><i class="fa fa-calendar-o"></i>Courses<span class="fa fa-chevron-down"></span></a>
-                    </li>
-                    <li><a href="albums.php"><i class="fa fa-image"></i>Albums<span class="fa fa-chevron-down"></span></a>
-                    </li>
-                    <li><a href="logout.php"><i class="fa fa-windows"></i> Logout <span class="fa fa-chevron-down"></span></a>
-                </ul>
+    <li><a href="events.php"><i class="fa fa-calendar-o"></i>Events<span class="fa fa-chevron-down"></span></a>
+    </li>
+    <li><a href="courses.php"><i class="fa fa-book"></i>Courses<span class="fa fa-chevron-down"></span></a>
+    </li>
+    <li><a href="staff.php"><i class="fa fa-users"></i>Staff<span class="fa fa-chevron-down"></span></a>
+    </li>
+    <li><a href="albums.php"><i class="fa fa-image"></i>Albums<span class="fa fa-chevron-down"></span></a>
+    </li>
+    <li><a href="logout.php"><i class="fa fa-windows"></i> Logout <span class="fa fa-chevron-down"></span></a>
+    </li>
+</ul>
+
             </div>
          
 

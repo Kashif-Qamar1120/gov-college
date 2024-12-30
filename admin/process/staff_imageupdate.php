@@ -15,7 +15,7 @@ if(isset($_POST['update']) && $_POST['update'] == "img"){
         // Validate image type
         if ($PhotoType == "image/png" || $PhotoType == "image/jpg" || $PhotoType == "image/jpeg") {
             // Move the uploaded file to the target directory
-            $upload = move_uploaded_file($PhotoTamp, "../uploads/courses/$PhotoName");
+            $upload = move_uploaded_file($PhotoTamp, "../uploads/staff/$PhotoName");
 
             // Check if the file was uploaded successfully
             if (!$upload) {
@@ -26,12 +26,12 @@ if(isset($_POST['update']) && $_POST['update'] == "img"){
         }
 
         // Update the image name in the database
-        $sql = "UPDATE courses SET image = '$PhotoName' WHERE c_id = '$imgid'";
+        $sql = "UPDATE staff SET image = '$PhotoName' WHERE s_id = '$imgid'";
         $execute = mysqli_query($conn, $sql);
 
         // Check if the query was successful
         if($execute) {
-            header('Location: ../courses.php?1');  // Success
+            header('Location: ../staff.php?1');  // Success
             exit();
         } else {
             // Log the error if the query fails
