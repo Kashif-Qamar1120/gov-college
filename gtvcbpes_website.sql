@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 30, 2024 at 11:03 AM
+-- Generation Time: Dec 30, 2024 at 02:43 PM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.5.38
 
@@ -52,15 +52,19 @@ CREATE TABLE `courses` (
   `c_id` int(20) NOT NULL,
   `image` varchar(50) NOT NULL,
   `c_name` varchar(50) NOT NULL,
-  `c_desc` varchar(50) NOT NULL
+  `c_desc` varchar(50) NOT NULL,
+  `category` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `courses`
 --
 
-INSERT INTO `courses` (`c_id`, `image`, `c_name`, `c_desc`) VALUES
-(3, 'imc-2.jpg', 'sidra kashif', '<p>akhter</p>');
+INSERT INTO `courses` (`c_id`, `image`, `c_name`, `c_desc`, `category`) VALUES
+(1, 'mining.jpg', 'Mining', '<p>The Mining Engineering course focuses on the ex', NULL),
+(2, 'elect.jpg', 'Electrical', '<p>The Electrical Engineering diploma offers stude', NULL),
+(3, 'telecom.jpg', 'Telecommunication', '<p>The Telecommunication course at our institute p', NULL),
+(4, 'dit.jpg', 'Diploma in Information Technology (DIT)', '<p>The DIT program provides practical knowledge in', NULL);
 
 -- --------------------------------------------------------
 
@@ -245,7 +249,7 @@ INSERT INTO `pictures` (`picture_id`, `event_id`, `picture`, `status`, `created_
 (129, 33, 'WhatsApp Image 2023-07-22 at 9.09.08 AM (1).jpeg', 1, '2023-08-22 03:52:30'),
 (130, 34, 'WhatsApp Image 2023-08-01 at 7.59.29 PM.jpeg', 1, '2023-08-22 03:55:27'),
 (131, 34, 'WhatsApp Image 2023-08-01 at 7.59.30 PM.jpeg', 1, '2023-08-22 03:55:27'),
-(132, 35, 'WhatsApp Image 2023-08-16 at 12.19.27 PM.jpeg', 1, '2023-09-04 07:40:18'),
+(132, 35, 'WhatsApp Image 2023-08-16 at 12.19.27 PM.jpeg', 1, '2024-12-30 11:56:47'),
 (133, 36, 'WhatsApp Image 2023-09-18 at 1.11.43 PM (1).jpeg', 1, '2023-09-18 08:36:53'),
 (134, 36, 'WhatsApp Image 2023-09-18 at 1.11.43 PM.jpeg', 1, '2023-09-18 08:36:53'),
 (135, 36, 'WhatsApp Image 2023-09-18 at 1.12.07 PM.jpeg', 1, '2023-09-18 08:36:53'),
@@ -311,7 +315,29 @@ INSERT INTO `pictures` (`picture_id`, `event_id`, `picture`, `status`, `created_
 (195, 56, 'WhatsApp Image 2023-05-27 at 10.18.01 AM.jpeg', 1, '2024-05-02 04:56:46'),
 (196, 57, 'WhatsApp Image 2024-05-04 at 7.14.38 PM.jpeg', 1, '2024-05-06 07:38:04'),
 (197, 57, 'WhatsApp Image 2024-05-04 at 7.14.39 PM.jpeg', 1, '2024-05-06 07:38:05'),
-(198, 57, 'WhatsApp Image 2024-05-04 at 7.14.41 PM.jpeg', 1, '2024-05-06 07:38:05');
+(198, 57, 'WhatsApp Image 2024-05-04 at 7.14.41 PM.jpeg', 1, '2024-05-06 07:38:05'),
+(199, 58, 'Event1.jpg', 1, '2024-12-30 10:10:59');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `staff`
+--
+
+CREATE TABLE `staff` (
+  `s_id` int(20) NOT NULL,
+  `s_name` varchar(50) NOT NULL,
+  `s_desc` varchar(50) NOT NULL,
+  `image` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `staff`
+--
+
+INSERT INTO `staff` (`s_id`, `s_name`, `s_desc`, `image`) VALUES
+(1, 'Amer Afaq', '<p>Secretary Industries</p>', 'secretaryindustries.png'),
+(2, 'Mansoor', '<p>managing director</p>', 'managingdirector.png');
 
 --
 -- Indexes for dumped tables
@@ -342,6 +368,12 @@ ALTER TABLE `pictures`
   ADD PRIMARY KEY (`picture_id`);
 
 --
+-- Indexes for table `staff`
+--
+ALTER TABLE `staff`
+  ADD PRIMARY KEY (`s_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -354,7 +386,7 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `courses`
 --
 ALTER TABLE `courses`
-  MODIFY `c_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `c_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `events`
 --
@@ -364,7 +396,12 @@ ALTER TABLE `events`
 -- AUTO_INCREMENT for table `pictures`
 --
 ALTER TABLE `pictures`
-  MODIFY `picture_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=199;
+  MODIFY `picture_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=200;
+--
+-- AUTO_INCREMENT for table `staff`
+--
+ALTER TABLE `staff`
+  MODIFY `s_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
