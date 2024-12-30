@@ -19,7 +19,7 @@ if(isset($_POST['update']) && $_POST['update'] == "img"){
                 c_id = '$id', 
                 courses = '$PhotoName'
                 WHERE c_id ='$imgid'";
-			$execute = mysqli_query($conn, $sql);+
+			$execute = mysqli_query($conn, $sql);
             if($execute)
 			{
 				
