@@ -1,3 +1,40 @@
+<?php
+// Database connection variables
+$host = "localhost";
+$username = "root";
+$password = ""; // Use your database password
+$dbname = "gtvcbpes_website";
+
+// Create connection
+$conn = new mysqli($host, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Retrieve form data
+    $name = $conn->real_escape_string($_POST['name']);
+    $email = $conn->real_escape_string($_POST['email']);
+    $subject = $conn->real_escape_string($_POST['subject']);
+    $message = $conn->real_escape_string($_POST['message']);
+
+    // Insert data into database
+    $sql = "INSERT INTO contacts (name, email, subject, message) VALUES ('$name', '$email', '$subject', '$message')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "<script>alert('Message sent successfully!');</script>";
+    } else {
+        echo "<script>alert('Error: " . $conn->error . "');</script>";
+    }
+}
+
+// Close connection
+$conn->close();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -106,13 +143,11 @@ https://templatemo.com/tm-569-edu-meeting
         </div>
       </div>
     </div>
+  </section>
 
-
-   <?php 
+  <?php 
    include './include/footer.php'
    ?>
 
-
-  </section>
 </body>
 </html>

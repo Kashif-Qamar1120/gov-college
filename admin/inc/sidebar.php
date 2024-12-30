@@ -37,6 +37,8 @@
     </li>
     <li><a href="logout.php"><i class="fa fa-windows"></i> Logout <span class="fa fa-chevron-down"></span></a>
     </li>
+    <li><a href="contact.php"><i class="fa fa-users"></i>Contacts<span class="fa fa-chevron-down"></span></a>
+    </li>
 </ul>
 
             </div>
