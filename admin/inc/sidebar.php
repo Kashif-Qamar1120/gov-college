@@ -1,4 +1,5 @@
 
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
 <div class="col-md-3 left_col">
     <div class="left_col scroll-view">
@@ -37,6 +38,9 @@
     </li>
     <li><a href="contact.php"><i class="fa fa-users"></i>Contacts<span class="fa fa-chevron-down"></span></a>
     </li>
+    <li><a href="leadership.php"><i class="fa fa-user"></i>Leadership Profile<span class="fa fa-chevron-down"></span></a></li>
+
+
     <li><a href="logout.php"><i class="fa fa-windows"></i> Logout <span class="fa fa-chevron-down"></span></a>
     </li>
 </ul>
