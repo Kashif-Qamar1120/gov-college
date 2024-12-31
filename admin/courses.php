@@ -94,6 +94,7 @@ $query="select * from courses";
                                         <!-- <th>SubCategory Name</th> -->
                                         <th>Name:</th>
                                         <th>Description:</th>
+                                        <th>Category:</th>
                                         <th>Images</th>       
                                         <th style="float: right">Action</th>
                                     </tr>
@@ -101,34 +102,44 @@ $query="select * from courses";
 
 
                                     <tbody>
+                                    <?php
+                                    $i = 1;
+                                    while ($record = mysqli_fetch_array($excute)) {
+                                        // Check if category_id exists and is not empty
+                                        if (!empty($record['category_id'])) {
+                                            $category_query = "SELECT name FROM categories WHERE id = " . $record['category_id'];
+                                            $category_result = mysqli_query($conn, $category_query);
+                                            // Check if the query was successful
+                                            if (!$category_result) {
+                                                echo "Error in query: " . mysqli_error($conn);
+                                            } else {
+                                                $category = mysqli_fetch_assoc($category_result);
+                                            }
+                                        } else {
+                                            $category = ['name' => 'Unknown']; // Fallback if category_id is missing or empty
+                                            }
+                                            ?>
+                                            <tr>
+                                                <td><?php echo $i; ?></td>
+                                                <td><?php echo $record['c_name']; ?></td>
+                                                <td><?php echo $record['c_desc']; ?></td>
+                                                <!-- Display the category name instead of the ID -->
+                                                 <td><?php echo isset($category['name']) ? $category['name'] : 'Unknown'; ?></td>
+                                                 <td><button data-toggle="modal" data-target="#imageModal<?php echo $record['c_id']; ?>">View Images</button></td>
+                                                 <td class="text-right">
+                                                    <a href="edit_courses.php?edit=<?php echo $record['c_id']; ?>">
+                                                        <button type="button" rel="tooltip" class="btn btn-success btn-icon btn-sm ">
+                                                            <i class="fa fa-user"></i>
+                                                        </button>
+                                                    </a>
+                                                    <a href="process/courses_delete.php?dlt=<?php echo $record['c_id']; ?>">
+                                                        <button type="button" rel="tooltip" class="btn btn-danger btn-icon btn-sm ">
+                                                            <i class="fa fa-times"></i>
+                                                        </button>
+                                                    </a>
+                                                </td>
+                                            </tr>
 
-									<?php
-
-
-										$i=1; while($record=mysqli_fetch_array($excute)){
-
-										?>
-                                    <tr>
-										
-                                        <td><?php echo $i; ?></td>
-										<td><?php echo $record['c_name']; ?></td>
-										<td><?php echo $record['c_desc']; ?></td>
-                                        <td><button data-toggle="modal" data-target="#imageModal<?php echo $record['c_id']; ?>">View Images</button></td>
-                                        <td class="text-right">
-							<a href="edit_courses.php?edit=<?php echo $record['c_id']; ?>">
-                          <button type="button" rel="tooltip" class="btn btn-success btn-icon btn-sm ">
-                            <i class="fa fa-user"></i>
-                          </button>
-                        </a>
-										
-										
-                          <a href="process/courses_delete.php?dlt=<?php echo $record['c_id']; ?>">
-										<button type="button" rel="tooltip" class="btn btn-danger btn-icon btn-sm ">
-                            <i class="fa fa-times"></i>
-                          </button>
-										
-										</a>
-                        </td>
 
                         <!-- Modal -->
 <div class="modal fade" id="imageModal<?php echo $record['c_id']; ?>" tabindex="-1" role="dialog" aria-labelledby="imageModal" aria-hidden="true">
@@ -228,6 +239,22 @@ $query="select * from courses";
                         <label for="message-text" class="col-form-label">Description:</label>
                         <textarea class="form-control" name="desc" id="message-text"></textarea>
                     </div>
+
+                    <div class="form-group">
+    <label for="category" class="col-form-label">Category:</label>
+    <select class="form-control" name="category" required>
+        <option value="">Select a Category</option>
+        <?php
+        $category_query = "SELECT * FROM categories";
+        $category_result = mysqli_query($conn, $category_query);
+         while ($category = mysqli_fetch_assoc($category_result)) { ?>
+            <option value="<?php echo $category['id']; ?>">
+                <?php echo $category['name']; ?>
+            </option>
+        <?php } ?>
+    </select>
+</div>
+
 
                     <div class="form-group">
                         <label for="recipient-name" class="col-form-label">Picture:</label>

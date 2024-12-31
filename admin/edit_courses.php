@@ -1,15 +1,16 @@
 <?php
 require_once 'process/conn.php';
+
+$categoriesQuery = mysqli_query($conn, "SELECT * FROM categories"); // Fetch categories
+
 if (isset($_GET['edit']) && $_GET['edit'] != '') {
-	$edit = $_GET['edit'];
-	$query = mysqli_query($conn, "select * from courses where c_id = '$edit'");
-	$fetch = mysqli_fetch_array($query);
+    $edit = $_GET['edit'];
+    $query = mysqli_query($conn, "SELECT * FROM courses WHERE c_id = '$edit'");
+    $fetch = mysqli_fetch_array($query);
+    $currentCategoryId = $fetch['category_id']; // Current category ID
 }
-
-
-
-
 ?>
+
 
 
 
@@ -94,6 +95,19 @@ if (isset($_GET['edit']) && $_GET['edit'] != '') {
                         <label for="message-text" class="col-form-label">Description:</label>
                         <textarea class="form-control" name="desc" id="message-text"><?php echo $fetch['c_desc'] ?></textarea>
                     </div>
+
+					<div class="form-group">
+    <label for="category" class="col-form-label">Category:</label>
+    <select name="category_id" class="form-control">
+        <?php
+        while ($category = mysqli_fetch_assoc($categoriesQuery)) {
+            $selected = ($category['id'] == $currentCategoryId) ? 'selected' : '';
+            echo "<option value='{$category['id']}' $selected>{$category['name']}</option>";
+        }
+        ?>
+    </select>
+</div>
+
 
                     <!-- <div class="form-group">
                         <label for="recipient-name" class="col-form-label">Picture:</label>

@@ -3,16 +3,25 @@ require_once('../admin/process/conn.php');
 
 // Get the filter category if it is set in the URL, default to 'All'
 $categoryFilter = isset($_GET['category']) ? $_GET['category'] : 'All';
+$categoryFilter = mysqli_real_escape_string($conn, $categoryFilter);
 
-// Modify the SQL query to filter based on category
+// Build the query with proper escaping
 if ($categoryFilter == 'All') {
-    $query = "SELECT * FROM courses";
+    $query = "SELECT courses.* FROM courses";
 } else {
-    $query = "SELECT * FROM courses WHERE category = '$categoryFilter'";
+    $query = "SELECT courses.* FROM courses 
+              JOIN categories ON courses.category_id = categories.id 
+              WHERE categories.name = '$categoryFilter'";
 }
 
+
+// Execute the query
 $execute = mysqli_query($conn, $query);
+if (!$execute) {
+    die("SQL Error: " . mysqli_error($conn));
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -35,12 +44,13 @@ $execute = mysqli_query($conn, $query);
         <div class="row">
             <div class="col-lg-12">
                 <div class="filters">
-                    <ul>
-                        <li data-filter="*" class="<?= ($categoryFilter == 'All') ? 'active' : '' ?>"><a href="?category=All">All Courses</a></li>
-                        <li data-filter=".soon" class="<?= ($categoryFilter == 'Mining') ? 'active' : '' ?>"><a href="?category=Mining">Mining</a></li>
-                        <li data-filter=".imp" class="<?= ($categoryFilter == 'Electrical') ? 'active' : '' ?>"><a href="?category=Electrical">Electrical</a></li>
-                        <li data-filter=".att" class="<?= ($categoryFilter == 'Telecommunication') ? 'active' : '' ?>"><a href="?category=Telecommunication">Telecommunication</a></li>
-                    </ul>
+                <ul>
+                    <li class="<?= ($categoryFilter == 'All') ? 'active' : '' ?>"><a href="?category=All">All Courses</a></li>
+                    <li class="<?= ($categoryFilter == 'Mining') ? 'active' : '' ?>"><a href="?category=Mining">Mining</a></li>
+                    <li class="<?= ($categoryFilter == 'Electrical') ? 'active' : '' ?>"><a href="?category=Electrical">Electrical</a></li>
+                    <li class="<?= ($categoryFilter == 'Telecommunication') ? 'active' : '' ?>"><a href="?category=Telecommunication">Telecommunication</a></li>
+                </ul>
+
                 </div>
             </div>
 

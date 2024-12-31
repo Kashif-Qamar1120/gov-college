@@ -2,13 +2,21 @@
 require_once 'conn.php';
 
 if (isset($_POST['update'])) {
-    $id = $_POST['id'];
-    $name = $_POST['name'];
-    $desc = $_POST['desc'];
+    $id = mysqli_real_escape_string($conn, $_POST['id']);
+    $name = mysqli_real_escape_string($conn, $_POST['name']);
+    $desc = mysqli_real_escape_string($conn, $_POST['desc']);
+    $category_id = mysqli_real_escape_string($conn, $_POST['category_id']); // Fetch category ID
 
-    $query = "UPDATE courses SET c_name = '$name', c_desc = '$desc' WHERE c_id = '$id'";
+    // Update query with category
+    $query = "UPDATE courses 
+              SET c_name = '$name', 
+                  c_desc = '$desc', 
+                  category_id = '$category_id' 
+              WHERE c_id = '$id'";
+    
     $execute = mysqli_query($conn, $query);
 
+    // Redirect based on query result
     if ($execute) {
         header("Location: ../courses.php?update=success");
     } else {
@@ -16,3 +24,4 @@ if (isset($_POST['update'])) {
     }
 }
 ?>
+
