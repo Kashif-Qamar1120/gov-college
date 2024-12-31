@@ -30,8 +30,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-// Close connection
-$conn->close();
+// Query to fetch data from leadership_profiles table
+$query = "SELECT lp_id, name, designation, profile_image, description FROM leadership_profiles";
+$result = mysqli_query($conn, $query);
 ?>
 
 <!DOCTYPE html>
@@ -74,7 +75,7 @@ https://templatemo.com/tm-569-edu-meeting
  ?>
 
   <!-- ***** Main Banner Area Start ***** -->
-  <section class="section main-banner" id="top" data-section="section1">
+<section class="section main-banner" id="top" data-section="section1">
       <video autoplay muted loop id="bg-video">
           <source src="assets/images/course-video.mp4" type="video/mp4" />
       </video>
@@ -95,82 +96,44 @@ https://templatemo.com/tm-569-edu-meeting
             </div>
           </div>
       </div>
-  </section>
+</section>
   <!-- ***** Main Banner Area End ***** -->
-
   <section class="services">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="owl-service-item owl-carousel">
-          
-            <div class="item">
-              <div style="padding-right:85px;">
-              <div class="icon">
-                <img src="./assets/images/secretaryindustries.png" alt="" style="height: 160px; width: 160px;">
-              </div>
-            </div>
-              <div class="down-content">
-                <h4>Amer Afaq <br>(Secretary Industries)</h4>
-                <p>Suspendisse tempor mauris a sem elementum bibendum. Praesent facilisis massa non vestibulum.</p>
-              </div>
-            </div>
-            
-            <div class="item">
-              <div style="padding-right:85px;">
-
-                <div class="icon">
-                  <img src="./assets/images/chairman.png" alt="" style="height: 160px; width: 160px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="owl-service-item owl-carousel">
+                        <?php 
+                        // Loop through the fetched data and display each leadership profile
+                        while ($row = mysqli_fetch_assoc($result)) { 
+                        ?>
+                            <div class="item">
+                                <div style="padding-right:85px;">
+                                    <div class="icon">
+                                        <!-- Use the fetched profile image URL from the database -->
+                                        <img src="./assets/images/<?php echo $row['profile_image']; ?>" alt="" style="height: 160px; width: 160px;">
+                                    </div>
+                                </div>
+                                <div class="down-content">
+                                    <!-- Display fetched name and designation -->
+                                    <h4><?php echo $row['name']; ?> <br>(<?php echo $row['designation']; ?>)</h4>
+                                    <!-- Display fetched description -->
+                                    <p><?php echo $row['description']; ?></p>
+                                </div>
+                            </div>
+                        <?php 
+                        } // End of the while loop
+                        ?>
+                    </div>
                 </div>
-              </div>
-              <div class="down-content">
-                <h4>Abdul Karim Khan<br>(Chairman)</h4>
-                <p>Suspendisse tempor mauris a sem elementum bibendum. Praesent facilisis massa non vestibulum.</p>
-              </div>
             </div>
-            
-            <div class="item">
-              <div style="padding-right:85px;">
-
-                <div class="icon">
-                  <img src="./assets/images/managingdirector.png" alt="" style="height: 160px; width: 160px;">
-                </div>
-              </div>
-              <div class="down-content">
-                <h4>Mansoor Qaiser<br>(Managing Director)</h4>
-                <p>Suspendisse tempor mauris a sem elementum bibendum. Praesent facilisis massa non vestibulum.</p>
-              </div>
-            </div>
-            
-            <div class="item">
-              <div style="padding-right:85px;">
-
-                <div class="icon">
-                  <img src="./assets/images/principal.png" alt="" style="height: 160px; width: 160px;">
-                </div>
-              </div>
-              <div class="down-content">
-                <h4>Junaid Zaheer<br>(Principal)</h4>
-                <p>Suspendisse tempor mauris a sem elementum bibendum. Praesent facilisis massa non vestibulum.</p>
-              </div>
-            </div>
-            
-            <!-- <div class="item">
-              <div class="icon">
-                <img src="assets/images/service-icon-03.png" alt="">
-              </div>
-              <div class="down-content">
-                <h4>Best Networking</h4>
-                <p>Suspendisse tempor mauris a sem elementum bibendum. Praesent facilisis massa non vestibulum.</p>
-              </div>
-            </div> -->
-            
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
+    <?php
+    // Close the database connection after all operations are done
+    mysqli_close($conn);
+    ?>
   <section class="upcoming-meetings" id="meetings">
     <div class="container">
       <div class="row">
