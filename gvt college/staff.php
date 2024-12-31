@@ -46,9 +46,9 @@ $execute = mysqli_query($conn, $query);
                         <h3><?php echo $record['s_name']; ?></h3>
                         <p class="staff-role"><?php echo $record['s_desc']; ?></p>
                         <div class="social-icons">
-                            <a href="<?php echo $record['social_facebook']; ?>"><i class="fab fa-facebook"></i></a>
-                            <a href="<?php echo $record['social_twitter']; ?>"><i class="fab fa-twitter"></i></a>
-                            <a href="<?php echo $record['social_instagram']; ?>"><i class="fab fa-instagram"></i></a>
+                            <a href=""><i class="fab fa-facebook"></i></a>
+                            <a href=""><i class="fab fa-twitter"></i></a>
+                            <a href=""><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>

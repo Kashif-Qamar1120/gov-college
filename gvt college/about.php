@@ -40,12 +40,12 @@ https://templatemo.com/tm-569-edu-meeting
   include './include/header.php'
   ?>
   <!-- About Us section -->
-  <div class="px-6 py-32 main-container ">
+  <div class="px-6 pt-32 main-container ">
 
     <section id="about-us"
       class="flex flex-col p-0 border border-gray-300 rounded-md shadow-md shadow-gray-300 " style="    background-color: #181818;">
 
-      <div class="flex items-center justify-center  p-4 border-b border-gray-300 heading">
+      <div class="flex items-center justify-center  pt-4 border-b border-gray-300 heading">
         <h1 class="text-lg font-extrabold text-white pt-4">About Us</h1>
       </div>
 
@@ -59,32 +59,22 @@ https://templatemo.com/tm-569-edu-meeting
         <div class="mt-4 text-sm text-justify text">
           <div class="text-para1">
             <p class="text-white"><strong>
-                Welcome to Yellow Pages − Australia’s leading online directory, and the trusted print
-                directory in Aussie households for generations.
+                Welcome to Government Polytechnic Institute, District Mohmand:
               </strong></p>
             <p class="mt-3 text-white">
-              Australians make more than 2 million searches across our website each month ¹ while 1 in 5
-              Aussies use the Yellow Pages book every year to find local businesses and connect with
-              experts ². We’re proud to lend a helping hand!
+              Established in 1989 as a Government Vocational Institute, our institute has grown and evolved to meet the educational and technical needs of the people of District Mohmand. Over the decades, we have emerged as a trusted institution for skill development and technical education, shaping futures and fostering innovation.
             </p>
             <p class="mt-3 text-white">
-              For decades, our name has been synonymous with reliability, connecting millions of
-              Australians with the products and services they need, when they need them. Our iconic
-              directory has evolved into a comprehensive digital platform, empowering consumers and
-              businesses alike to thrive in today’s dynamic marketplace
+              In 2004, we advanced to become the Government Technical Institute, introducing a 3-year Diploma of Associate Engineer (DAE) program in Telecommunication. By 2017, we further expanded into the Government Polytechnic Institute, offering additional diplomas in Mining, Electrical, and Civil technologies. Complementing our DAE programs, a one-year Diploma in Information Technology (DIT) also became part of our curriculum.
             </p>
 
-            <p class="mt-3 text-white">
-              We’re committed to simplifying the search process, whether you’re looking for a local
-              hairdresser, a reputable plumber, or a specialised service provider. Our user-friendly
-              website allows you to explore a diverse range of businesses with ease. Whether you’re
-              browsing for personal or professional needs, you can trust Yellow Pages to deliver reliable
-              results tailored to your preferences.
+            <p class="text-white"><strong>
+                Programs and Faculty:
+              </strong></p>
+            <p class=" text-white">
+              We offer specialized diploma programs supported by qualified permanent teaching staff in areas like Civil Technology, Mining Technology, and Related Studies (Physics, Mathematics, English, Islamiat, and Management).
             </p>
-            <p class="mt-3 text-white">
-              Join the millions of Aussies who rely on Yellow Pages every day to discover, connect, and
-              transact with confidence.
-            </p>
+
 
           </div>
           <!-- ###############Helping local businesses grow              -->
@@ -95,28 +85,17 @@ https://templatemo.com/tm-569-edu-meeting
               <section class="flex flex-col items-center gap-8 mb-16 lg:flex-row">
                 <div class="w-full lg:w-1/2">
                   <img src="./assets/aboutImg/local.jfif" alt="Our Team"
-                    class="rounded-lg shadow-lg w-[550px] sm:w-full lg:h-[310px] ">
+                    class="rounded-lg sm:w-full lg:h-[310px] shadow-md shadow-gray-300 ">
                 </div>
                 <div class="w-full space-y-4 lg:w-1/2">
-                  <h2 class="text-[18px] text-white sm:text-xl md:text-2xl font-semibold">Helping local
-                    businesses grow</h2>
-                  <p class="text-gray-700 text-white">As champions of local businesses, we understand the vital
-                    role they play in driving economic growth and fostering vibrant communities.
-                    That’s why it’s our mission to help small enterprises flourish in an
-                    increasingly competitive landscape. By featuring their offerings to a broader
-                    audience, we help local businesses expand their reach and achieve sustainable
-                    success.
+                  <h2 class="text-[18px] text-white sm:text-xl md:text-2xl font-semibold">Empowering Local Businesses to Thrive</h2>
+                  <p class="text-gray-700 text-white">At our core, we champion the growth and success of local businesses, recognizing their critical role in driving economic development and nurturing vibrant communities. Our mission is to support small enterprises in flourishing within today’s competitive marketplace. By showcasing their services and products to a wider audience, we empower local businesses to expand their reach and achieve long-term success.
                   </p>
                   <p class="mt-3 text-white">
-                    While we continue to provide localised advertising for small businesses in
-                    Australia, we also offer tailored digital marketing advice to help you grow
-                    online. In 2021, Thryv acquired Yellow Pages, White Pages, Whereis, and True
-                    Local. Our new restructure means, you’ll now be engaging with Thryv instead of
-                    Yellow Pages. However, rest assured, we remain the go-to destination for local
-                    businesses to be found.
+                    In addition to offering localized advertising solutions, we now provide tailored digital marketing strategies designed to help businesses thrive online. Since the acquisition by Thryv in 2021, we have integrated the expertise of platforms like Yellow Pages, White Pages, Whereis, and True Local into a unified structure. With this transformation, you’ll now engage with Thryv, though our commitment to being the trusted platform for connecting local businesses remains unwavering
                   </p>
                   <p class="mt-3 text-white">
-                    Explore the possibilities with Yellow Pages today.
+                    Discover new opportunities with us today—your partner in growth and success!
                   </p>
 
 
@@ -132,9 +111,7 @@ https://templatemo.com/tm-569-edu-meeting
                       class="w-12 h-12 mx-auto">
                   </div>
                   <h3 class="mb-2 text-xl font-bold">Our Mission</h3>
-                  <p class="text-gray-600 ">Our mission is to empower Australians by simplifying their
-                    search for local businesses and services, connecting them with reliable experts
-                    and service providers.</p>
+                  <p class="text-gray-600 ">To empower individuals and communities by making it simple to find and connect with local businesses and services, bridging the gap with reliable experts and trusted providers.</p>
                 </div>
                 <div
                   class="p-6 text-center transition duration-500 transform bg-white rounded-lg shadow-lg hover:scale-105 hover:shadow-2xl">
@@ -144,9 +121,7 @@ https://templatemo.com/tm-569-edu-meeting
                       class="w-12 h-12 mx-auto">
                   </div>
                   <h3 class="mb-2 text-xl font-bold">Our Impact</h3>
-                  <p class="text-gray-600">We help Australians easily find and connect with local
-                    businesses and experts. By providing a trusted platform, we support communities
-                    and contribute to the success of small businesses across the country.</p>
+                  <p class="text-gray-600">We make it easier for people to discover and connect with local businesses and skilled professionals. Through our trusted platform, we strengthen communities and drive the growth and success of small enterprises nationwide.</p>
                 </div>
                 <div
                   class="p-6 text-center transition duration-500 transform bg-white rounded-lg shadow-lg hover:scale-105 hover:shadow-2xl">
@@ -155,10 +130,7 @@ https://templatemo.com/tm-569-edu-meeting
                       class="w-12 h-12 mx-auto">
                   </div>
                   <h3 class="mb-2 text-xl font-bold">Our Values</h3>
-                  <p class="text-gray-600">At Yellow Pages, we are committed to providing reliable
-                    information that Australians can count on to find the right businesses and
-                    services. We support local businesses by helping them grow and reach more
-                    people.</p>
+                  <p class="text-gray-600">We are dedicated to delivering dependable and accurate information that helps individuals find the right services and businesses. Supporting local businesses is at the heart of what we do, helping them grow, thrive, and reach a broader audience..</p>
                 </div>
                 <div
                   class="p-6 text-center transition duration-500 transform bg-white rounded-lg shadow-lg hover:scale-105 hover:shadow-2xl">
@@ -167,9 +139,7 @@ https://templatemo.com/tm-569-edu-meeting
                       class="w-12 h-12 mx-auto">
                   </div>
                   <h3 class="mb-2 text-xl font-bold">Our Vision</h3>
-                  <p class="text-gray-600">To be Australia’s leading platform for discovering and
-                    connecting with local businesses, continuously evolving to meet the needs of a
-                    dynamic marketplace.</p>
+                  <p class="text-gray-600">To be the leading platform in Australia for discovering and connecting with local businesses, continually adapting to meet the ever-changing needs of a dynamic and competitive marketplace.</p>
                 </div>
               </section>
 
@@ -185,11 +155,8 @@ https://templatemo.com/tm-569-edu-meeting
                       <img src="./assets/aboutImg/award-05-svgrepo-com.svg" alt=""
                         class="w-12 h-12 mx-auto">
                     </div>
-                    <h3 class="mb-2 text-xl font-bold text-center">Acquisition and Integration In
-                      2021</h3>
-                    <p class="text-center text-gray-600">Acquisition and Integration In 2021, Thryv
-                      acquired Yellow Pages, White Pages, Whereis, and True Local, bringing these
-                      trusted brands together under one platform.</p>
+                    <h3 class="mb-2 text-xl font-bold text-center">Acquisition and Integration (2021)</h3>
+                    <p class="text-center text-gray-600">In 2021, Thryv acquired Yellow Pages, White Pages, Whereis, and True Local, uniting these trusted brands under a single, cohesive platform to deliver even greater value to businesses and consumers..</p>
                   </div>
                   <div
                     class="p-6 transition duration-500 transform bg-white rounded-lg shadow-lg hover:scale-105 hover:shadow-2xl">
@@ -198,10 +165,8 @@ https://templatemo.com/tm-569-edu-meeting
                       <img src="./assets/aboutImg/award-svgrepo-com.svg" alt=""
                         class="w-12 h-12 mx-auto">
                     </div>
-                    <h3 class="mb-2 text-xl font-bold text-center">Service Streamlining</h3>
-                    <p class="text-center text-gray-600">Service Streamlining Over the following
-                      three years, we focused on integrating services to provide enhanced local
-                      business support and tailored digital marketing solutions.</p>
+                    <h3 class="mb-2 text-xl font-bold text-center">Streamlined Services</h3>
+                    <p class="text-center text-gray-600">Over the next three years, we streamlined our services to enhance support for local businesses, introducing tailored digital marketing solutions and integrated tools to help them grow and succeed.</p>
                   </div>
                   <div
                     class="p-6 transition duration-500 transform bg-white rounded-lg shadow-lg hover:scale-105 hover:shadow-2xl">
@@ -210,10 +175,8 @@ https://templatemo.com/tm-569-edu-meeting
                       <img src="./assets/aboutImg/award-basic-app-2-svgrepo-com.svg"
                         class="w-12 h-12 mx-auto" alt="">
                     </div>
-                    <h3 class="mb-2 text-xl font-bold text-center">Ongoing Commitment</h3>
-                    <p class="text-center text-gray-600">Ongoing Commitment Our unified platform
-                      continues to empower Australian businesses, ensuring they thrive with our
-                      comprehensive and integrated suppor.</p>
+                    <h3 class="mb-2 text-xl font-bold text-center">Continued Commitment</h3>
+                    <p class="text-center text-gray-600">Our unified platform remains dedicated to empowering Australian businesses, providing them with comprehensive support and innovative solutions to thrive in an ever-evolving marketplace.</p>
                   </div>
                 </div>
               </section>
