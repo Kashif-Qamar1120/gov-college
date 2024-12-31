@@ -1,6 +1,6 @@
 <?php
 require_once('process/conn.php');	
-$query="select * from staff";
+$query="select * from contacts";
 			$excute=mysqli_query($conn, $query);
 
 ?>
@@ -77,12 +77,12 @@ $query="select * from staff";
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="x_panel">
                             <div class="x_title">
-                                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
-                                        data-target="#exampleModal" data-whatever="@mdo">Add </button>
+                                <!-- <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                                        data-target="#exampleModal" data-whatever="@mdo">Add </button> -->
 
                             <!-- <a href="offer.php"><button class="btn btn-success btn-sm">Ad sales</button></a> -->
 
-                                <a href="process/album_delete.php?all"> <button class="btn btn-danger btn-lg" style="float: right">Delete All</button></a>
+                                <a href="process/_delete.php?all"> <button class="btn btn-danger btn-lg" style="float: right">Delete All</button></a>
                                 <div class="clearfix"></div>
                             </div>
                             <div class="x_content">
@@ -90,12 +90,13 @@ $query="select * from staff";
                                 <table id="datatable" class="table table-striped table-bordered">
                                     <thead>
                                     <tr>
-										<th>#</th>
+										<th>S_No</th>
                                         <!-- <th>SubCategory Name</th> -->
                                         <th>Name:</th>
-                                        <th>Description:</th>
-                                        <th>Images</th>       
-                                        <th style="float: right">Action</th>
+                                        <th>Email:</th>
+                                        <th>Subject</th>       
+                                        <th>Message</th>       
+                                        <th>Action</th>
                                     </tr>
                                     </thead>
 
@@ -108,30 +109,34 @@ $query="select * from staff";
 										$i=1; while($record=mysqli_fetch_array($excute)){
 
 										?>
-                                    <tr>
+                <tr>
 										
-                                        <td><?php echo $i; ?></td>
-										<td><?php echo $record['s_name']; ?></td>
-										<td><?php echo $record['s_desc']; ?></td>
-                                        <td><button data-toggle="modal" data-target="#imageModal<?php echo $record['s_id']; ?>">View Images</button></td>
-                                        <td class="text-right">
-							<a href="edit_staff.php?edit=<?php echo $record['s_id']; ?>">
-                          <button type="button" rel="tooltip" class="btn btn-success btn-icon btn-sm ">
+                    <td><?php echo $i; ?></td>
+					<td><?php echo $record['name']; ?></td>
+					<td><?php echo $record['email']; ?></td>
+					<td><?php echo $record['subject']; ?></td>
+					<td><?php echo $record['message']; ?></td>
+                            
+							<!-- <a href="edit_staff.php?edit=<?php echo $record['c_id']; ?>">
+                        <button type="button" rel="tooltip" class="btn btn-success btn-icon btn-sm ">
                             <i class="fa fa-user"></i>
-                          </button>
+                        </button>
+                        </a> -->
+										
+										
+                    <td style="text-align: center;">
+                        <a href="process/contact_delete.php?dlt=<?php echo $record['c_id']; ?>">
+                            <button type="button" rel="tooltip" class="btn btn-danger btn-icon btn-sm">
+                                <i class="fa fa-times"></i>
+                            </button>				
                         </a>
-										
-										
-                          <a href="process/staff_delete.php?dlt=<?php echo $record['s_id']; ?>">
-										<button type="button" rel="tooltip" class="btn btn-danger btn-icon btn-sm ">
-                            <i class="fa fa-times"></i>
-                          </button>
-										
-										</a>
-                        </td>
+                    </td>
 
+
+                </tr>
+                        
                         <!-- Modal -->
-<div class="modal fade" id="imageModal<?php echo $record['s_id']; ?>" tabindex="-1" role="dialog" aria-labelledby="imageModal" aria-hidden="true">
+<div class="modal fade" id="imageModal<?php echo $record['c_id']; ?>" tabindex="-1" role="dialog" aria-labelledby="imageModal" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -143,7 +148,7 @@ $query="select * from staff";
 
       <div class="modal-body">
       <?php
-                    $image_query = "SELECT * FROM staff WHERE s_id = {$record['s_id']}";
+                    $image_query = "SELECT * FROM contacts WHERE c_id = {$record['c_id']}";
                     $image_result = mysqli_query($conn, $image_query);
                     while ($image_row = mysqli_fetch_assoc($image_result)) {
                         $image_path = $image_row['image'];
@@ -192,60 +197,7 @@ $query="select * from staff";
 
 
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Add staff</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-			
-            <!-- <?php
-                $regex = "/^[a-zA-z\d\._]+@[a-zA-z\d\._]+\.[a-zA-Z\d\._]$/";
-                if(isset($_POST['submit'])){
-                    if(preg_match($regex,$_POST['textarea'])){
-                        $output = "<span> Good </span>";
-                    }
-                    else
-                    {
-                        $output = "<span> Bad </span>";
-                    }
-                }
-            
-            ?> -->
-			
-            <div class="modal-body">
-                <form action="process/staff_process.php" method="post" enctype="multipart/form-data">
-							
-                    <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">Staff Name:</label>
-                        <input type="text" class="form-control" name="name">
-                    </div>
 
-                    <div class="form-group">
-                        <label for="message-text" class="col-form-label">Description:</label>
-                        <textarea class="form-control" name="desc" id="message-text"></textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">Picture:</label>
-                        <input type="file" class="form-control" name="photos[]" multiple required>
-                    </div>            
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" name="submit" class="btn btn-primary">submit</button>
-                    <input type="hidden" name="events" value="form1">
-                    <input type="hidden" name="status" value="0">
-                    <?php if(isset($output)){ echo $output;} ?>
-                </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
 <!-- jQuery -->
 <script src="vendors/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap -->
