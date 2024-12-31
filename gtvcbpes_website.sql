@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 30, 2024 at 02:43 PM
--- Server version: 10.1.16-MariaDB
--- PHP Version: 5.5.38
+-- Generation Time: Dec 31, 2024 at 10:29 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -28,11 +29,11 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `admins` (
   `admin_id` int(11) NOT NULL,
-  `admin_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `admin_email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `admin_password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `status` int(11) NOT NULL DEFAULT '1',
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `admin_name` varchar(255) NOT NULL,
+  `admin_email` varchar(255) NOT NULL,
+  `admin_password` varchar(255) NOT NULL,
+  `status` int(11) NOT NULL DEFAULT 1,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -45,6 +46,50 @@ INSERT INTO `admins` (`admin_id`, `admin_name`, `admin_email`, `admin_password`,
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `categories`
+--
+
+CREATE TABLE `categories` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `categories`
+--
+
+INSERT INTO `categories` (`id`, `name`) VALUES
+(4, 'civil'),
+(5, 'DIT'),
+(2, 'Electrical'),
+(1, 'Mining'),
+(3, 'Telecommunication');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contacts`
+--
+
+CREATE TABLE `contacts` (
+  `c_id` int(11) NOT NULL,
+  `name` varchar(20) NOT NULL,
+  `email` varchar(25) NOT NULL,
+  `subject` varchar(50) NOT NULL,
+  `message` varchar(60) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `contacts`
+--
+
+INSERT INTO `contacts` (`c_id`, `name`, `email`, `subject`, `message`) VALUES
+(1, 'KASHIF QAMAR', 'kashifqamar1000@gmail.com', 'sas', 'asfsdfds'),
+(2, 'KASHIF QAMAR1212', 'kashifqamar1000@gmail.com', 'gsfgsfg', 'sfgsfgfgfgsfg');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `courses`
 --
 
@@ -52,19 +97,19 @@ CREATE TABLE `courses` (
   `c_id` int(20) NOT NULL,
   `image` varchar(50) NOT NULL,
   `c_name` varchar(50) NOT NULL,
-  `c_desc` varchar(50) NOT NULL,
-  `category` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `c_desc` varchar(200) NOT NULL,
+  `category_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `courses`
 --
 
-INSERT INTO `courses` (`c_id`, `image`, `c_name`, `c_desc`, `category`) VALUES
-(1, 'mining.jpg', 'Mining', '<p>The Mining Engineering course focuses on the ex', NULL),
-(2, 'elect.jpg', 'Electrical', '<p>The Electrical Engineering diploma offers stude', NULL),
-(3, 'telecom.jpg', 'Telecommunication', '<p>The Telecommunication course at our institute p', NULL),
-(4, 'dit.jpg', 'Diploma in Information Technology (DIT)', '<p>The DIT program provides practical knowledge in', NULL);
+INSERT INTO `courses` (`c_id`, `image`, `c_name`, `c_desc`, `category_id`) VALUES
+(1, 'mining.jpg', 'Mining', '<p>The Mining Engineering course focuses on the extraction of natural resources, teaching students about mining processes, safety measures, and environmental impact, paving the way for careers in the ', 1),
+(2, 'elect.jpg', 'Electrical', '<p>The Electrical Engineering diploma offers students comprehensive training in electrical systems, circuits, and power generation, preparing them for careers in the energy and automation sectors.</p>', 2),
+(3, 'telecom.jpg', 'Telecommunication', '<p>The Telecommunication course at our institute provides students with in-depth knowledge of modern communication systems. It equips them with the skills needed to excel in the rapidly evolving field', 3),
+(4, 'dit.jpg', 'Diploma in Information Technology (DIT)', '<p>The DIT program provides practical knowledge in computer systems, programming, and network management, equipping students with essential IT skills for the digital age.</p>', 5);
 
 -- --------------------------------------------------------
 
@@ -74,10 +119,10 @@ INSERT INTO `courses` (`c_id`, `image`, `c_name`, `c_desc`, `category`) VALUES
 
 CREATE TABLE `events` (
   `id` int(11) NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `status` int(11) NOT NULL DEFAULT '1',
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `name` varchar(255) NOT NULL,
+  `description` longtext NOT NULL,
+  `status` int(11) NOT NULL DEFAULT 1,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -102,15 +147,38 @@ INSERT INTO `events` (`id`, `name`, `description`, `status`, `created_at`) VALUE
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `leadership_profiles`
+--
+
+CREATE TABLE `leadership_profiles` (
+  `lp_id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `designation` varchar(255) NOT NULL,
+  `profile_image` varchar(255) NOT NULL,
+  `description` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `leadership_profiles`
+--
+
+INSERT INTO `leadership_profiles` (`lp_id`, `name`, `designation`, `profile_image`, `description`) VALUES
+(7, 'KASHIF QAMARqw', '<p>web dev12</p>', 'profile.png', 'perfect12'),
+(8, 'KASHIF QAMAR12', '<p>assistant proffessor12</p>', 'logo.png', 'he is the best person in the college12'),
+(9, 'sidra akhter', '<p>manager</p>', 'managingdirector.png', 'good');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `pictures`
 --
 
 CREATE TABLE `pictures` (
   `picture_id` int(11) NOT NULL,
   `event_id` int(11) NOT NULL,
-  `picture` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `status` int(11) NOT NULL DEFAULT '1',
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `picture` varchar(255) NOT NULL,
+  `status` int(11) NOT NULL DEFAULT 1,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -329,14 +397,13 @@ CREATE TABLE `staff` (
   `s_name` varchar(50) NOT NULL,
   `s_desc` varchar(50) NOT NULL,
   `image` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `staff`
 --
 
 INSERT INTO `staff` (`s_id`, `s_name`, `s_desc`, `image`) VALUES
-(1, 'Amer Afaq', '<p>Secretary Industries</p>', 'secretaryindustries.png'),
 (2, 'Mansoor', '<p>managing director</p>', 'managingdirector.png');
 
 --
@@ -350,16 +417,36 @@ ALTER TABLE `admins`
   ADD PRIMARY KEY (`admin_id`);
 
 --
+-- Indexes for table `categories`
+--
+ALTER TABLE `categories`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `name` (`name`);
+
+--
+-- Indexes for table `contacts`
+--
+ALTER TABLE `contacts`
+  ADD PRIMARY KEY (`c_id`);
+
+--
 -- Indexes for table `courses`
 --
 ALTER TABLE `courses`
-  ADD PRIMARY KEY (`c_id`);
+  ADD PRIMARY KEY (`c_id`),
+  ADD KEY `category_id` (`category_id`);
 
 --
 -- Indexes for table `events`
 --
 ALTER TABLE `events`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `leadership_profiles`
+--
+ALTER TABLE `leadership_profiles`
+  ADD PRIMARY KEY (`lp_id`);
 
 --
 -- Indexes for table `pictures`
@@ -382,26 +469,50 @@ ALTER TABLE `staff`
 --
 ALTER TABLE `admins`
   MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `categories`
+--
+ALTER TABLE `categories`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `contacts`
+--
+ALTER TABLE `contacts`
+  MODIFY `c_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT for table `courses`
 --
 ALTER TABLE `courses`
   MODIFY `c_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 --
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+
+--
+-- AUTO_INCREMENT for table `leadership_profiles`
+--
+ALTER TABLE `leadership_profiles`
+  MODIFY `lp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
 --
 -- AUTO_INCREMENT for table `pictures`
 --
 ALTER TABLE `pictures`
   MODIFY `picture_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=200;
+
 --
 -- AUTO_INCREMENT for table `staff`
 --
 ALTER TABLE `staff`
   MODIFY `s_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
