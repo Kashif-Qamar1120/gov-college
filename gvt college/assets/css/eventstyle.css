@@ -1,604 +1,92 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
-
-body
-{
+/* General Styles */
+body {
     margin: 0;
-    padding: 0;
-    font-family: 'Roboto Condensed', sans-serif;
-}
-.dark p,.dark h3
-{
-    color: #000;
-}
-.dark .section .leftBox .content p
-{
-    color: #fff;
-}
-.section
-{
-    width: 100%;
-    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+  }
+  
+  .events-container {
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
-}
-.section .leftBox
-{
-    width: 50%;
-    height: 100%;
-    float: left;
-    padding: 30px;
-    box-sizing: border-box;
-}
-.section .leftBox .content
-{
-    color: #fff;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 40px;
-    transition: 0.5s;
-}
-.section .leftBox .content:hover
-{
-    background: #e91e63;
-}
-.section .leftBox .content h1
-{
-    margin: 0;
-    padding: 0;
-    font-size: 50px;
-    text-transform: uppercase;
-}
-.section .leftBox .content h1 sup
-{
-    font-size: 26px;
-}
-.section .leftBox .content p
-{
-    margin: 10px 0 0;
-    padding: 0;
-}
-.section .events
-{
-    position: relative;
-    width: 50%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    float: right;
-    margin-top: 2%;
-    box-sizing: border-box;
-    overflow: auto;
-}
-.section .events ul
-{
-    position: absolute;
-    margin: 0;
-    padding: 40px;
-    box-sizing: border-box;
-}
-.section .events ul li
-{
-    list-style: none;
-    background: #fff;
-    box-sizing: border-box;
-    height: 200px;
-    margin: 15px 0;
-}
-.section .events ul li .time
-{
-    position: relative;
+  }
+  
+  /* Intro Section */
+  .intro-section {
+    background-color: #d98299;
+    color: white;
     padding: 20px;
-    background: #262626;
-    box-sizing: border-box;
-    width: 30%;
-    height: 100%;
-    float: left;
+    border-radius: 8px;
     text-align: center;
-    transition: 0.5s;
-}
-.section .events ul li:hover .time
-{
-    background: #e91e63;
-}
-.section .events ul li .time h2
-{
-    position: absolute;
+  }
+  
+  .intro-section h1 {
+    font-size: 2.5em;
+    font-weight: bold;
     margin: 0;
-    padding: 0;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    color: #fff;
-    font-size: 30px;
-    line-height: 30px;
-}
-.section .events ul li .time h2 span
-{
-    font-size: 30px;
-}
-.section .events ul li .details
-{
-    padding: 20px;
-    background: #fff;
-    box-sizing: border-box;
-    width: 70%;
-    height: 100%;
-    float: left;
-}
-.section .events ul li .details h3
-{
-    position: relative;
-    margin: 0;
-    padding: 0;
-    font-size: 22px;
-}
-.section .events ul li .details p
-{
-    position: relative;
-    margin: 10px 0 0;
-    padding: 0;
-    font-size: 16px;
-}
-.section .events ul li .details a
-{
-    display: inline-block;
-    text-decoration: none;
-    text-transform: uppercase;
-    padding: 10px 15px;
-    border: 2px solid #262626;
-    margin-top: 15px;
-    font-size: 18px;
-    transition: 0.5s;
-}
-.section .events ul li .details a:hover
-{
-    background: #e91e63;
-    color: #fff;
-    border-color: #e91e63;
-}
-.section .leftBox .eventListNon
-{
-    opacity: 0;
-    visibility: hidden;
-    transition: 1s;
-}
-.section .leftBox .eventListNon.reveal
-{
-    opacity: 1;
-    visibility: visible;
-    
-}
-.section .leftBox .eventListLab
-{
-    opacity: 0;
-    visibility: hidden;
-    transition: 1s;
-}
-.section .leftBox .eventListLab.reveal
-{
-    opacity: 1;
-    visibility: visible;
-}
-.section .events::-webkit-scrollbar
-{
-    width: 4px;
-}
-.section .events::-webkit-scrollbar-thumb
-{
-    background: linear-gradient(transparent,#fff);
-    
-}
-.section .events::-webkit-scrollbar-thumb:hover
-{
-    background: linear-gradient(transparent,#e91e63);
-}
-
-@media (max-width: 991px)
-{
-    .section
-    {
-        height: 100vh;
-        background-position: center;
-    }
-    .section .leftBox
-    {
-        width: 100%;
-        height: auto;
-        float: none;
-        padding: 20px;
-        margin-top: 20%;
-    }
-    .section .events
-    {
-        width: 100%;
-        height: auto;
-        background: transparent;
-        float: none;
-    }
-    .section .leftBox .content
-    {
-        padding: 20px;
-    }
-    .section .leftBox .content h1
-    {
-        font-size: 30px;
-    }
-    .section .events ul
-    {
-        position: relative;
-        transform: translateY(0px);
-        padding: 0 20px 20px;
-    }
-    .section .events ul li
-    {
-        height: auto;
-        background: rgba(255, 255, 255, 0.9);
-    }
-    .section .events ul li .time
-    {
-        width: 80px;
-        height: 80px;
-        padding: 0;
-    }
-    .section .events ul li .time h2
-    {
-        font-size: 13px;
-        line-height: 24px;
-    }
-    .section .events ul li .time h2 span
-    {
-        font-size: 20px;
-    }
-    .section .events ul li .details
-    {
-        width: 100%;
-        float: none;
-        padding-left: 100px;
-        background: transparent;
-    }
-    .section .events ul li .details a
-    {
-        padding: 5px 10px;
-    }
-}
-
-/* style.css codes */
-
-@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700&display=swap');
-*
-{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-body
-{
-    min-height: 1000px;
-}
-header
-{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: #000;
+  }
+  
+  .intro-section h1 span {
+    font-size: 1.2em;
+  }
+  
+  .intro-section p {
+    font-size: 1.2em;
+    line-height: 1.5;
+  }
+  
+  /* Event Cards Section */
+  .event-cards {
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    transition: 1s;
-}
-header h3
-{
-    margin-top: 31%;
-}
-header.sticky
-{
-    height: 80px;
-    z-index: 2;
-}
-header .banner
-{
-    position: absolute;
-    top: 0;
-    width: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-header.sticky .banner
-{
-    opacity: 0.5;
-    transition: 1s;
-}
-header .logo
-{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    height: 50%;
-    color: #fff;
-    font-weight: 700;
-    transition: 1s;
-    text-decoration: none;
-    z-index: 1;
-}
-header.sticky .logo
-{
-    transition: 0.5s;
-    opacity: 0;
-    visibility: hidden;
-}
-header.sticky .smallLogo
-{
-    opacity: 1;
-    position: absolute;
-    font-size: 2em;
-    left: 100px;
-}
-nav
-{
-    position: relative;
+    flex-wrap: wrap;
+    gap: 20px;
     margin-top: 20px;
-    display: flex;
-    z-index: 1;
-}
-nav ul
-{
-    position: relative;
-    display: flex;
-    padding: 0 100px;
-    transition: 0.25s;
-    transform: translateX(100px);
-    opacity: 0;
-}
-nav.active ul
-{
-    position: fixed;
-    top: 80px;
-    left: 0;
-    width: 100%;
-    height: calc(100% - 80px);
-    background: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-nav ul li a
-{
+  }
+  
+  .event-card {
+    flex: 1 1 calc(50% - 20px);
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .event-card h3 {
     font-size: 1.5em;
-    padding: 5px 15px;
-}
-header.sticky nav ul
-{
-    transform: translateX(0);
-    opacity: 1;
-    transition-delay: 0.75s;
-    opacity: 1;
-    visibility: visible;
-}
-nav ul li
-{
-    list-style: none;
-}
-nav ul li a
-{
-    color: #fff;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .event-card h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+  }
+  
+  .event-card p {
+    font-size: 1em;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+  
+  .event-card.non-lab {
+    background-color: #2b2b2b;
+  }
+  
+  .btn-participate {
     display: inline-block;
-    padding: 10px 15px;
-    font-size: 1.2em;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
     text-decoration: none;
-}
-nav ul li a:hover
-{
-    color: #ff275f;
-}
-nav ul li button
-{
-    background: transparent;
-    border-color: #fff;
-    border-radius: 32px;
-}
-nav ul li button:hover
-{
-    background: #ff275f;
-}
-nav ul li button a:hover
-{
-    color: #fff;
-}
-section
-{
-    margin-top: 50vh;
-    padding: 100px;
-}
-section h2
-{
-    font-size: 3em;
-}
-section p
-{
-    font-size: 1.2em;
-}
-marquee
-{
-    background-color: #000;
-    color: #fff;
-    position: relative;
-}
-
-
-
-
-/*Scrollbar modifications*/
-::-webkit-scrollbar
-{
-    width: 10px;
-}
-::-webkit-scrollbar-thumb
-{
-    background: linear-gradient(transparent,#ff3131);
-    border-radius: 6px;
-}
-::-webkit-scrollbar-thumb:hover
-{
-    background: linear-gradient(transparent,#00c6ff);
-}
-::-webkit-scrollbar-track
-{
-    background: #000;
-}
-
-/*Scroll*/
-.container
-{
-    z-index: 0;
-}
-
-/*Dark Mode*/
-.dark
-{
-    background: rgb(39, 38, 38);
-    background-size: contain;
-    color: #fff;
-}
-.themeSwitch
-{
-    position: relative;
-    margin-left: 10px;
-    margin-top: 2px;
-    width: 40px;
-    height: 40px;
-    background: #fff;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.themeSwitch.active
-{
-    background: #fff;
-}
-.themeSwitch::before
-{
-    content: '\f186';
-    font-family: fontAwesome;
-    color: #000;
-    font-size: 20px;
-}
-.themeSwitch.active::before
-{
-    content: '\f185';
-    color: #000;
-}
-
-#carouselExampleCaptions
-{
-    max-width: 690px;
-}
-
-footer
-{
-    background: #ff275f;
-    color: #fff;
-}
-footer p
-{
-    font-size: 10px;
-    color: #000;
+    font-weight: bold;
+    border-radius: 5px;
     text-align: center;
-}
-/*Mobile Responsive*/
-@media (max-width: 991px)
-{
-    section,
-    nav ul
-    {
-        padding: 40px;
-    }
-    section h2
-    {
-        font-size: 2em;
-    }
-    header .logo
-    {
-        height: 50%;
-        width: 100%;
-    }
-    header.sticky .logo
-    {
-        left: 40px;
-    }
-    header.sticky .smallLogo
-    {
-        left: 40px;
-    }
-    header.sticky .banner
-    {
-        opacity: 0;
-    }
-    header h3
-    {
-        font-size: 95%;
-        margin-top: 124%;
-    }
-    nav ul
-    {
-        display: none;
-        opacity: 0;
-        visibility: hidden;
-    }
-    header.sticky .toggle
-    {
-        position: fixed;
-        top: 15px;
-        right: 40px;
-        width: 50px;
-        height: 50px;
-        cursor: pointer;
-        background: #fff url(images/menu.png);
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-    header.sticky .toggle.active
-    {
-        background: #fff url(images/close.png);
-        background-size: 25px;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-    .themeSwitch
-    {
-        margin-left: 1px;
-        margin-top: 8px;
-        background: #fff;
-    }
-    .contactUs .mb-3
-    {
-        text-align: center;
-        margin-left: 40%;
-        width: 100%;
-    }
-    .socials
-    {
-        padding: 70% 1%;
-        text-align: center;
-    }
-    .socials button
-    {
-        font-size: 10px;
-    }
-}
-@media (max-width: 420px)
-{
-    header .logo img
-    {
-        margin-top: 69px;
-        height: 45%;
-    }
-    header h3.logo
-    {
-        left: 75%;
-    }
-}
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-participate:hover {
+    background-color: #0056b3;
+  }
+  
