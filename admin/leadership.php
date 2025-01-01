@@ -232,9 +232,10 @@ $excute = mysqli_query($conn, $query);
                         </div>
 
                         <div class="form-group">
-                            <label for="message-text" class="col-form-label">Designation:</label>
-                            <textarea class="form-control" name="desig" id="message-text"></textarea>
+                            <label for="recipient-name" class="col-form-label">Designation:</label>
+                            <input type="text" class="form-control" name="name">
                         </div>
+
 
                         <div class="form-group">
                             <label for="message-text" class="col-form-label">Description:</label>
