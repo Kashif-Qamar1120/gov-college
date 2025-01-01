@@ -52,8 +52,8 @@ https://templatemo.com/tm-569-edu-meeting
 
       <div class="p-4 about-us-body">
         <div class="max-w-full shadow-xl aboutus-img">
-          <img class="min-w-full rounded-sm shadow-md shadow-gray-400"
-            src="./assets/aboutimg/About-us-Yellow-Pages.png" height="50vh" alt="about us img"
+          <img class="min-w-full rounded-sm shadow-md shadow-gray-400" style= "height: 80vh; padding: 40px;"
+            src="./assets/images/education.jpg" height="50vh" alt="about us img"
             title="about us image">
         </div>
         <div class="mt-4 text-sm text-justify text">
@@ -84,7 +84,7 @@ https://templatemo.com/tm-569-edu-meeting
             <main class="container px-4 py-12 mx-auto lg:px-8">
               <section class="flex flex-col items-center gap-8 mb-16 lg:flex-row">
                 <div class="w-full lg:w-1/2">
-                  <img src="./assets/aboutImg/local.jfif" alt="Our Team"
+                  <img src="./assets/images/image.png" alt="Our Team"
                     class="rounded-lg sm:w-full lg:h-[310px] shadow-md shadow-gray-300 ">
                 </div>
                 <div class="w-full space-y-4 lg:w-1/2">
