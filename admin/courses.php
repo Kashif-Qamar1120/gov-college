@@ -82,7 +82,7 @@ $query="select * from courses";
 
                             <!-- <a href="offer.php"><button class="btn btn-success btn-sm">Ad sales</button></a> -->
 
-                                <a href="process/album_delete.php?all"> <button class="btn btn-danger btn-lg" style="float: right">Delete All</button></a>
+                                <a href="process/courses_delete.php?all"> <button class="btn btn-danger btn-lg" style="float: right">Delete All</button></a>
                                 <div class="clearfix"></div>
                             </div>
                             <div class="x_content">
