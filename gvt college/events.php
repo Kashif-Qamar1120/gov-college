@@ -44,7 +44,7 @@ if (!$videos_result) {
   <!-- Custom CSS for Scrollable Videos Section -->
   <style>
     .video-container {
-      max-height: 400px; /* Adjust this as per your design */
+      max-height: 870px; /* Adjust this as per your design */
       overflow-y: auto;
     }
   </style>
