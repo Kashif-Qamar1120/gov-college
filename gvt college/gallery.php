@@ -68,7 +68,7 @@ https://templatemo.com/tm-569-edu-meeting
                 ?>
                 <div class="col-md-4 col-sm-6 post-masonry">
                     <div class="post-thumb">
-                        <img src="../admin/uploads/events/<?php echo $record['picture']?>" alt="">
+                        <img src="../admin/uploads/albums/<?php echo $record['picture']?>" alt="">
                         <div class="title-over">
                             <h4><a href="#"><?php echo $record['name']; ?></a></h4>
                         </div>
