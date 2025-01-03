@@ -58,7 +58,7 @@ if (!$videos_result) {
       <div class="row">
         <!-- Latest Articles Section -->
         <div class="col-lg-8">
-          <h3 class="mb-4">Latest Articles</h3>
+          <h3 class="mb-4">Latest News</h3>
           <?php
           if (mysqli_num_rows($articles_result) > 0) {
               while ($article = mysqli_fetch_array($articles_result)) {
@@ -80,7 +80,7 @@ if (!$videos_result) {
 
         <!-- Most Popular Videos Section -->
         <div class="col-lg-4">
-          <h3 class="mb-4">Most Popular Videos</h3>
+          <h3 class="mb-4">Most Popular Events</h3>
           <div class="video-container">
             <?php
             if (mysqli_num_rows($videos_result) > 0) {

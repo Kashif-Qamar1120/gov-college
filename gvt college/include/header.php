@@ -1,37 +1,139 @@
-<header class="header-area header-sticky bg-white">
-    <div class="container-fluid">
-        <div class="row">
-            <!-- ################Column for Images and Heading -->
-            <div class="col-4 d-flex align-items-center">
-                <img src="./assets/images/left-logo2.png" alt="Edu Meeting Logo" class="logo img-fluid mx-2" style="width: 50px; height: 50px;">
-                <h2 class="mb-0 text-primary">GPI Ekka Ghund</h2>
-                <img src="./assets/images/right-logo1.png" alt="Edu Meeting Logo" class="logo img-fluid mx-2" style="width: 50px; height: 50px;">
-            </div>
-            <!-- ##########Column for Navigation Buttons -->
-            <div class="col-8 mr-0">
-                <nav class="main-nav" style="height:23px;">
-                    <ul class="nav d-flex justify-content-end align-items-center">
-                        <li><a href="index.php" class="active">Home</a></li>
-                        <li><a href="about.php">About Us</a></li>
-                        <li><a href="events.php">News & Events</a></li>
-                        <li><a href="staff.php">Our Staff</a></li>
-                        <li><a href="gallery.php">Gallery</a></li>
-                        <li><a href="contact.php">Contact Us</a></li>
-                        <li class="has-sub" id="downloads-button">
-                            <a href="index.php">Downloads</a>
-                            <ul class="sub-menu" style="width: 120px;">
-                                <li><a href="meetings.php" style="font-size: 10px; padding:7px;">Admission Form</a></li>
-                                <li><a href="meeting1-details.php" style="font-size: 10px; padding:7px;">Chalan Slip</a></li>
-                                <li><a href="./courses.php" style="font-size: 10px; padding:7px;">Courses Outline</a></li>
-                                <li><a href="meeting1-details.php" style="font-size: 10px; padding:7px;">Results</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <a class='menu-trigger'>
-                        <span>Menu</span>
-                    </a>
-                </nav>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .menu-trigger {
+            cursor: pointer;
+            display: none;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .main-nav {
+            display: flex;
+            gap: 10px;
+            /* Reduced gap for horizontal layout */
+        }
+
+        .nav-item a {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s ease-in-out;
+            padding: 5px 10px;
+            /* Add padding for better click area */
+        }
+
+        .nav-item a:hover {
+            color: #007bff;
+        }
+
+        @media (max-width: 992px) {
+            .menu-trigger {
+                display: block;
+            }
+
+            .main-nav {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                background-color: #fff;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                width: 250px;
+                z-index: 1000;
+                padding: 15px 0;
+            }
+
+            .main-nav.active {
+                display: flex;
+            }
+
+            .nav-item {
+                margin: 10px 0;
+                text-align: left;
+                padding-left: 15px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header class="header-area header-sticky bg-white">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <!-- Column for Logo and Heading -->
+                <div class="col-6 col-lg-4 d-flex align-items-center">
+                    <img src="./assets/images/left-logo2.png" alt="Edu Meeting Logo" class="logo img-fluid mx-2" style="width: 50px; height: 50px;">
+                    <h2 class="mb-0 text-primary">GPI Ekka Ghund</h2>
+                    <img src="./assets/images/right-logo1.png" alt="Edu Meeting Logo" class="logo img-fluid mx-2" style="width: 50px; height: 50px;">
+                </div>
+                <!-- Column for Navigation Buttons -->
+                <div class="col-6 col-lg-8 text-end ">
+                    <span class="menu-trigger" id="menu-trigger">&#9776; Menu</span>
+                    <nav class="main-nav bg-white" id="main-nav">
+                        <ul class="nav flex-column flex-lg-row">
+                            <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
+                            <li class="nav-item"><a href="about.php" class="nav-link">About Us</a></li>
+                            <li class="nav-item"><a href="events.php" class="nav-link">News & Events</a></li>
+                            <li class="nav-item"><a href="staff.php" class="nav-link">Our Staff</a></li>
+                            <li class="nav-item"><a href="gallery.php" class="nav-link">Gallery</a></li>
+                            <li class="nav-item"><a href="contact.php" class="nav-link">Contact Us</a></li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" id="downloadsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Downloads</a>
+                                <ul class="dropdown-menu" aria-labelledby="downloadsDropdown">
+                                    <li><a class="dropdown-item" href="meetings.php">Admission Form</a></li>
+                                    <li><a class="dropdown-item" href="meeting1-details.php">Chalan Slip</a></li>
+                                    <li><a class="dropdown-item" href="./courses.php">Courses Outline</a></li>
+                                    <li><a class="dropdown-item" href="meeting1-details.php">Results</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
         </div>
-    </div>
-</header>
+    </header>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const menuTrigger = document.getElementById('menu-trigger');
+            const mainNav = document.getElementById('main-nav');
+
+            // Toggle menu visibility
+            menuTrigger.addEventListener('click', () => {
+                mainNav.classList.toggle('active');
+                // Update button text
+                menuTrigger.innerHTML = mainNav.classList.contains('active') ? '✖ Close' : '&#9776; Menu';
+            });
+
+            // Close the menu when a link is clicked (for small screens)
+            const navLinks = mainNav.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (mainNav.classList.contains('active')) {
+                        mainNav.classList.remove('active');
+                        menuTrigger.innerHTML = '&#9776; Menu';
+                    }
+                });
+            });
+        });
+    </script>
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
