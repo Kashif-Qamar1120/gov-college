@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 01, 2025 at 09:26 AM
+-- Generation Time: Jan 06, 2025 at 09:04 AM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.5.38
 
@@ -129,12 +129,12 @@ CREATE TABLE `events` (
 --
 
 INSERT INTO `events` (`id`, `name`, `description`, `status`, `created_at`) VALUES
-(35, 'Admission Open', '<p>Admission Open and limited Seats are available.</p>', 1, '2023-09-04 07:40:18'),
+(35, 'Admission Open', 'Admission Open and limited Seats are available.', 1, '2025-01-02 09:11:21'),
 (45, ' Trainee Report of Atlas Honda  ', '', 1, '2024-02-20 04:27:45'),
 (46, 'Job Fair 2024 of GTVC (B) Gulbahar, Peshawar ', '', 1, '2024-04-23 08:44:40'),
 (47, 'Job Fair 2024 of GTVC (B) Gulbahar, Peshawar ', '', 1, '2024-04-23 08:44:42'),
-(49, 'An Orientation Session at GTVC (B) Gulbahar, Peshawar', '<p>The orientation session at GTVC (B) Gulbahar, Peshawar provided a comprehensive overview of the digital skills program facilitated by Empowerment through Creative Integration, in collaboration with the United Nations Development Programme (UNDP). The initiative aims to equip youth with essential digital competencies to thrive in the modern landscape of technology-driven industries.</p>', 1, '2024-04-29 08:33:47'),
-(50, ' Ú¯ÙˆØ±Ù†Ù…Ù†Ù¹ Ù¹ÛŒÚ©Ù†ÛŒÚ©Ù„ Ø§ÛŒÙ†Úˆ ÙˆÙˆÚ©ÛŒØ´Ù†Ù„ Ø³Ù†Ù¹Ø± (Ø¨ÙˆØ§Ø¦Ø²) Ú¯Ù„Ø¨ÛØ§Ø±ØŒ Ù¾Ø´Ø§ÙˆØ± Ù…ÛŒÚº Ø¬Ø§Ø¨ ÙÛŒØ¦Ø± Ú©Ø§ Ø§Ù†Ø¹Ù‚Ø§Ø¯', '<p>&nbsp;Ú¯ÙˆØ±Ù†Ù…Ù†Ù¹ Ù¹ÛŒÚ©Ù†ÛŒÚ©Ù„ Ø§ÛŒÙ†Úˆ ÙˆÙˆÚ©ÛŒØ´Ù†Ù„ Ø³Ù†Ù¹Ø± (Ø¨ÙˆØ§Ø¦Ø²) Ú¯Ù„Ø¨ÛØ§Ø±ØŒ Ù¾Ø´Ø§ÙˆØ± Ù…ÛŒÚº Ø¬Ø§Ø¨ ÙÛŒØ¦Ø± Ú©Ø§ Ø§Ù†Ø¹Ù‚Ø§Ø¯</p>', 1, '2024-12-26 09:06:40'),
+(49, 'An Orientation Session at GTVC (B) Gulbahar, Peshawar', 'The orientation session at GTVC (B) Gulbahar, Peshawar provided a comprehensive overview of the digital skills program facilitated by Empowerment through Creative Integration, in collaboration with the United Nations Development Programme (UNDP). The initiative aims to equip youth with essential digital competencies to thrive in the modern landscape of technology-driven industries.', 1, '2025-01-02 09:12:02'),
+(50, ' Ú¯ÙˆØ±Ù†Ù…Ù†Ù¹ Ù¹ÛŒÚ©Ù†ÛŒÚ©Ù„ Ø§ÛŒÙ†Úˆ ÙˆÙˆÚ©ÛŒØ´Ù†Ù„ Ø³Ù†Ù¹Ø± (Ø¨ÙˆØ§Ø¦Ø²) Ú¯Ù„Ø¨ÛØ§Ø±ØŒ Ù¾Ø´Ø§ÙˆØ± Ù…ÛŒÚº Ø¬Ø§Ø¨ ÙÛŒØ¦Ø± Ú©Ø§ Ø§Ù†Ø¹Ù‚Ø§Ø¯', '&nbsp;Ú¯ÙˆØ±Ù†Ù…Ù†Ù¹ Ù¹ÛŒÚ©Ù†ÛŒÚ©Ù„ Ø§ÛŒÙ†Úˆ ÙˆÙˆÚ©ÛŒØ´Ù†Ù„ Ø³Ù†Ù¹Ø± (Ø¨ÙˆØ§Ø¦Ø²) Ú¯Ù„Ø¨ÛØ§Ø±ØŒ Ù¾Ø´Ø§ÙˆØ± Ù…ÛŒÚº Ø¬Ø§Ø¨ ÙÛŒØ¦Ø± Ú©Ø§ Ø§Ù†Ø¹Ù‚Ø§Ø¯', 1, '2025-01-02 09:12:16'),
 (51, 'Auto Mechanical Students Visit to Abid CNG 24 june, 2023', '', 1, '2024-05-02 04:48:49'),
 (52, 'Basic Computer Training held at GTVC (B) at 18 July, 2023', '', 1, '2024-05-02 04:49:31'),
 (53, 'Support Staff Perfforming Special Task of the Centre', '', 1, '2024-05-02 04:50:38'),
@@ -384,7 +384,8 @@ INSERT INTO `pictures` (`picture_id`, `event_id`, `picture`, `status`, `created_
 (196, 57, 'WhatsApp Image 2024-05-04 at 7.14.38 PM.jpeg', 1, '2024-05-06 07:38:04'),
 (197, 57, 'WhatsApp Image 2024-05-04 at 7.14.39 PM.jpeg', 1, '2024-05-06 07:38:05'),
 (198, 57, 'WhatsApp Image 2024-05-04 at 7.14.41 PM.jpeg', 1, '2024-05-06 07:38:05'),
-(199, 58, 'Event1.jpg', 1, '2024-12-30 10:10:59');
+(199, 58, 'Event1.jpg', 1, '2024-12-30 10:10:59'),
+(200, 58, 'course-01.jpg', 1, '2025-01-02 07:52:50');
 
 -- --------------------------------------------------------
 
@@ -498,7 +499,7 @@ ALTER TABLE `leadership_profiles`
 -- AUTO_INCREMENT for table `pictures`
 --
 ALTER TABLE `pictures`
-  MODIFY `picture_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=200;
+  MODIFY `picture_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=201;
 --
 -- AUTO_INCREMENT for table `staff`
 --
