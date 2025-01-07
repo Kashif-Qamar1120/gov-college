@@ -55,6 +55,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+
             width: 100%;
             position: relative;
         }
@@ -100,20 +101,16 @@
             width: 75%;
         }
 
-        main {
+        /* main {
             position: absolute;
             top: 40%;
-        }
-
-
-
-
+        } */
 
         .icon {
-            color: #fff;
+            color: white;
             font-size: 20px;
             cursor: pointer;
-            display: none;
+
         }
 
         .menu-list .cancel-btn {
@@ -157,7 +154,7 @@
 
             .icon {
                 display: block;
-                color: rgb(255, 255, 255);
+                color: rgb(7, 7, 7);
                 font-size: 1.5rem;
             }
 
@@ -269,50 +266,60 @@
 
 
 <body>
-    <header class="header-area header-sticky ">
+    <header class="header-area header-sticky bg-white ">
         <div class="container-fluid">
             <div class="row align-items-center">
-                <nav class="navbar">
-                    <div class="content">
-                        <h2 style="font-size:15px;">GPI EKKA GHUND</h2>
-                        <div class="logo">
-                            <img src="./assets/images/right-logo1.png" alt="">
+                <nav class="navbar ">
+                    <div class="d-flex col-12">
+                        <div class="content">
+                            <div class=" d-flex">
+                                <h2 class="fs-3 fw-bold ">GPI EKKA GHUND</h2>
+                                <div class="logo mx-4">
+                                    <img src="./assets/images/right-logo1.png" alt="">
+                                </div>
+                            </div>
+
+
+
+                            <ul class="menu-list">
+                                <div class="icon cancel-btn">
+                                    <i class="fas fa-times"></i>
+                                </div>
+                                    <li><a href="index.php">Home</a></li>
+                                    <li><a href="about.php">About Us</a></li>
+                                    <li><a href="./courses.php">Courses </a></li>
+                                    <li><a href="staff.php">Our Staff</a></li>
+                                    <li><a href="contact.php">Contact Us</a></li>
+                                <!-- Dropdown Menus -->
+                                <ul style="list-style: none; padding: 0; margin: 0; text-align: center;">
+                                
+                                <!-- Menus Dropdown -->
+                                    <li class="has-sub" id="downloads-button1" style=" display: inline-block;">
+                                        <a href="javascript:void(0);" onclick="toggleSubMenu1()" style="text-decoration: none;  display: inline-block;">Menus</a>
+                                        <ul class="sub-menu" id="sub-menu1" style="display: none; width: 120px; position: absolute; background: #fff; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); margin: 0; padding: 0;">
+                                            <li><a href="gallery.php" style="font-size: 10px; padding: 7px; display: block; text-align: left;">Gallery</a></li>
+                                            <li><a href="events.php" style="font-size: 10px; padding: 7px; display: block; text-align: left;">News and Events</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <!-- Downloads Dropdown -->
+                                    <li class="has-sub" id="downloads-button" style=" display: inline-block;">
+                                        <a href="javascript:void(0);" onclick="toggleSubMenu()" style="text-decoration: none;  display: inline-block;">Downloads</a>
+                                        <ul class="sub-menu" id="sub-menu" style="display: none; width: 120px; position: absolute; background: #fff; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); margin: 0; padding: 0;">
+                                            <li><a href="meetings.php" style="font-size: 10px; padding: 7px; display: block; text-align: left;">Admission Form</a></li>
+                                            <li><a href="meeting1-details.php" style="font-size: 10px; padding: 7px; display: block; text-align: left;">Chalan Slip</a></li>
+                                            <li><a href="meeting1-details.php" style="font-size: 10px; padding: 7px; display: block; text-align: left;">Results</a></li>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                            </ul>
+
+                            
                         </div>
 
-                        <ul class="menu-list">
-                            <div class="icon cancel-btn">
-                                <i class="fas fa-times" style="color:black;"></i>
-                            </div>
-                            <li><a href="index.php">Home</a></li>
-                            <li><a href="about.php">About Us</a></li>
-                            <li><a href="./courses.php">Courses </a></li>
-                            <li><a href="staff.php">Our Staff</a></li>
-                            <li><a href="contact.php">Contact Us</a></li>
-                         <!-- Dropdown Menus -->
-<ul style="list-style: none; padding: 0; margin: 0; text-align: center;">
-    <!-- Menus Dropdown -->
-    <li class="has-sub" id="downloads-button1" style=" display: inline-block;">
-        <a href="javascript:void(0);" onclick="toggleSubMenu1()" style="text-decoration: none;  display: inline-block;">Menus</a>
-        <ul class="sub-menu" id="sub-menu1" style="display: none; width: 120px; position: absolute; background: #fff; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); margin: 0; padding: 0;">
-            <li><a href="gallery.php" style="font-size: 10px; padding: 7px; display: block; text-align: left;">Gallery</a></li>
-            <li><a href="events.php" style="font-size: 10px; padding: 7px; display: block; text-align: left;">News and Events</a></li>
-        </ul>
-    </li>
-
-    <!-- Downloads Dropdown -->
-    <li class="has-sub" id="downloads-button" style=" display: inline-block;">
-        <a href="javascript:void(0);" onclick="toggleSubMenu()" style="text-decoration: none;  display: inline-block;">Downloads</a>
-        <ul class="sub-menu" id="sub-menu" style="display: none; width: 120px; position: absolute; background: #fff; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); margin: 0; padding: 0;">
-            <li><a href="meetings.php" style="font-size: 10px; padding: 7px; display: block; text-align: left;">Admission Form</a></li>
-            <li><a href="meeting1-details.php" style="font-size: 10px; padding: 7px; display: block; text-align: left;">Chalan Slip</a></li>
-            <li><a href="meeting1-details.php" style="font-size: 10px; padding: 7px; display: block; text-align: left;">Results</a></li>
-        </ul>
-    </li>
-</ul>
-                        </ul>
-
                         <div class="icon menu-btn">
-                            <i class="fas fa-bars" style="color:black;"></i>
+                                <i class="fas fa-bars"></i>
                         </div>
                     </div>
                 </nav>
@@ -354,72 +361,72 @@
                 navbar.classList.remove("sticky");
         };
     </script>
-   
 
-<!-- JavaScript -->
-<script>
-    function toggleSubMenu1() {
-        const subMenu1 = document.getElementById('sub-menu1');
-        if (subMenu1.style.display === 'none' || subMenu1.style.display === '') {
-            subMenu1.style.display = 'block';
-        } else {
-            subMenu1.style.display = 'none';
+
+    <!-- JavaScript -->
+    <script>
+        function toggleSubMenu1() {
+            const subMenu1 = document.getElementById('sub-menu1');
+            if (subMenu1.style.display === 'none' || subMenu1.style.display === '') {
+                subMenu1.style.display = 'block';
+            } else {
+                subMenu1.style.display = 'none';
+            }
         }
-    }
 
-    function toggleSubMenu() {
-        const subMenu = document.getElementById('sub-menu');
-        if (subMenu.style.display === 'none' || subMenu.style.display === '') {
-            subMenu.style.display = 'block';
-        } else {
-            subMenu.style.display = 'none';
+        function toggleSubMenu() {
+            const subMenu = document.getElementById('sub-menu');
+            if (subMenu.style.display === 'none' || subMenu.style.display === '') {
+                subMenu.style.display = 'block';
+            } else {
+                subMenu.style.display = 'none';
+            }
         }
-    }
 
-    // Close dropdowns when clicking outside
-    document.addEventListener('click', function (event) {
-        const menuButton1 = document.getElementById('downloads-button1');
-        const subMenu1 = document.getElementById('sub-menu1');
-        const menuButton = document.getElementById('downloads-button');
-        const subMenu = document.getElementById('sub-menu');
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function(event) {
+            const menuButton1 = document.getElementById('downloads-button1');
+            const subMenu1 = document.getElementById('sub-menu1');
+            const menuButton = document.getElementById('downloads-button');
+            const subMenu = document.getElementById('sub-menu');
 
-        if (!menuButton1.contains(event.target)) {
-            subMenu1.style.display = 'none';
+            if (!menuButton1.contains(event.target)) {
+                subMenu1.style.display = 'none';
+            }
+            if (!menuButton.contains(event.target)) {
+                subMenu.style.display = 'none';
+            }
+        });
+    </script>
+
+    <!-- CSS -->
+    <style>
+        ul {
+            padding: 0;
+            margin: 0;
         }
-        if (!menuButton.contains(event.target)) {
-            subMenu.style.display = 'none';
+
+        .has-sub a {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+            color: #000;
         }
-    });
-</script>
 
-<!-- CSS -->
-<style>
-    ul {
-        padding: 0;
-        margin: 0;
-    }
+        .sub-menu li {
+            list-style: none;
+            padding: 0;
+        }
 
-    .has-sub a {
-        font-family: Arial, sans-serif;
-        font-size: 14px;
-        font-weight: bold;
-        color: #000;
-    }
+        .sub-menu li a {
+            text-decoration: none;
+            color: #000;
+        }
 
-    .sub-menu li {
-        list-style: none;
-        padding: 0;
-    }
-
-    .sub-menu li a {
-        text-decoration: none;
-        color: #000;
-    }
-
-    .sub-menu li a:hover {
-        background-color: #f0f0f0;
-    }
-</style>
+        .sub-menu li a:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
 </body>
 
 </html>
