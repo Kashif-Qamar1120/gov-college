@@ -65,7 +65,7 @@ if (!$videos_result) {
           ?>
             <div class="article-card mb-4">
               <img src="../admin/uploads/events/<?php echo $article['picture']; ?>" alt="Article Image">
-              <div class="article-card-body">
+              <div class="article-card-body" style="background-color: black;">
                 <h5 class="article-title"><?php echo htmlspecialchars($article['name']); ?></h5>
                 <p><?php echo htmlspecialchars($article['description']); ?></p>
               </div>
@@ -88,7 +88,7 @@ if (!$videos_result) {
             ?>
               <div class="video-card mb-4">
                 <img src="../admin/uploads/events/<?php echo $video['picture']; ?>" alt="Video Thumbnail">
-                <div class="video-card-body">
+                <div class="video-card-body" style="background-color: black;">
                   <h5 class="video-title"><?php echo htmlspecialchars($video['name']); ?></h5>
                   <p><?php echo htmlspecialchars($video['description']); ?></p>
                 </div>

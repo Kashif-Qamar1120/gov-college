@@ -646,7 +646,7 @@ https://templatemo.com/tm-569-edu-meeting
         </div> 
         <div class="col-lg-6 align-self-center">
           <div class="video">
-            <a href="https://www.youtube.com/watch?v=HndV87XpkWg" target="_blank"><img src="assets/images/play-icon.png" alt=""></a>
+            <a href="https://www.youtube.com/watch?v=b_TRNe_uziA"><img src="assets/images/play-icon.png" alt=""></a>
           </div>
         </div>
       </div>
@@ -754,11 +754,11 @@ https://templatemo.com/tm-569-edu-meeting
           reqSectionPos = reqSection.offset().top - 0;
 
           if (isAnimate) {
-            $('body, html').animate({
+            $('body, php').animate({
               scrollTop: reqSectionPos },
             800);
           } else {
-            $('body, html').scrollTop(reqSectionPos);
+            $('body, php').scrollTop(reqSectionPos);
           }
 
         };
