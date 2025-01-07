@@ -34,11 +34,13 @@ https://templatemo.com/tm-569-edu-meeting
 
 </head>
 
-<body style="    background-color: #181818;">
-
-  <?php
+<header>
+<?php
   include './include/header.php'
   ?>
+</header>
+<body style="    background-color: #181818;">
+
   <!-- About Us section -->
   <div class="px-6 pt-32 main-container ">
 
