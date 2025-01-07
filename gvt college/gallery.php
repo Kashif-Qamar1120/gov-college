@@ -70,12 +70,12 @@ https://templatemo.com/tm-569-edu-meeting
             <div class="post-thumb">
                 <img src="../admin/uploads/events/<?php echo $record['picture'] ?>" alt="Event Image">
                 <div class="title-over">
-                    <h4><a href="#"><?php echo $record['name']; ?></a></h4>
+                    <h6><?php echo $record['name']; ?></h6>
                 </div>
                 <div class="post-hover text-center">
                     <div class="inside">
                         <i class="fa fa-plus"></i>
-                        <h4><a href="#"><?php echo $record['description']; ?></a></h4>
+                        <h6><?php echo $record['description']; ?></h6>
                     </div>
                 </div>
             </div>
