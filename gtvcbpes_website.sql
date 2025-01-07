@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 06, 2025 at 09:04 AM
+-- Generation Time: Jan 07, 2025 at 03:29 PM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.5.38
 
@@ -129,12 +129,14 @@ CREATE TABLE `events` (
 --
 
 INSERT INTO `events` (`id`, `name`, `description`, `status`, `created_at`) VALUES
-(35, 'Admission Open', 'Admission Open and limited Seats are available.', 1, '2025-01-02 09:11:21'),
+(35, 'Admission Open', '<p>Admission Open and limited Seats are available.</p>', 1, '2023-09-04 07:40:18'),
+(44, 'SMEAD CAPACITY BUILDING INITIATIVE FOR TRAINEES ', '', 0, '2024-01-30 05:23:00'),
 (45, ' Trainee Report of Atlas Honda  ', '', 1, '2024-02-20 04:27:45'),
 (46, 'Job Fair 2024 of GTVC (B) Gulbahar, Peshawar ', '', 1, '2024-04-23 08:44:40'),
 (47, 'Job Fair 2024 of GTVC (B) Gulbahar, Peshawar ', '', 1, '2024-04-23 08:44:42'),
-(49, 'An Orientation Session at GTVC (B) Gulbahar, Peshawar', 'The orientation session at GTVC (B) Gulbahar, Peshawar provided a comprehensive overview of the digital skills program facilitated by Empowerment through Creative Integration, in collaboration with the United Nations Development Programme (UNDP). The initiative aims to equip youth with essential digital competencies to thrive in the modern landscape of technology-driven industries.', 1, '2025-01-02 09:12:02'),
-(50, ' Ú¯ÙˆØ±Ù†Ù…Ù†Ù¹ Ù¹ÛŒÚ©Ù†ÛŒÚ©Ù„ Ø§ÛŒÙ†Úˆ ÙˆÙˆÚ©ÛŒØ´Ù†Ù„ Ø³Ù†Ù¹Ø± (Ø¨ÙˆØ§Ø¦Ø²) Ú¯Ù„Ø¨ÛØ§Ø±ØŒ Ù¾Ø´Ø§ÙˆØ± Ù…ÛŒÚº Ø¬Ø§Ø¨ ÙÛŒØ¦Ø± Ú©Ø§ Ø§Ù†Ø¹Ù‚Ø§Ø¯', '&nbsp;Ú¯ÙˆØ±Ù†Ù…Ù†Ù¹ Ù¹ÛŒÚ©Ù†ÛŒÚ©Ù„ Ø§ÛŒÙ†Úˆ ÙˆÙˆÚ©ÛŒØ´Ù†Ù„ Ø³Ù†Ù¹Ø± (Ø¨ÙˆØ§Ø¦Ø²) Ú¯Ù„Ø¨ÛØ§Ø±ØŒ Ù¾Ø´Ø§ÙˆØ± Ù…ÛŒÚº Ø¬Ø§Ø¨ ÙÛŒØ¦Ø± Ú©Ø§ Ø§Ù†Ø¹Ù‚Ø§Ø¯', 1, '2025-01-02 09:12:16'),
+(48, 'Job Fair 2024 of GTVC (B) Gulbahar, Peshawar ', '', 0, '2024-04-23 08:45:14'),
+(49, 'An Orientation Session at GTVC (B) Gulbahar, Peshawar', '<p>The orientation session at GTVC (B) Gulbahar, Peshawar provided a comprehensive overview of the digital skills program facilitated by Empowerment through Creative Integration, in collaboration with the United Nations Development Programme (UNDP). The initiative aims to equip youth with essential digital competencies to thrive in the modern landscape of technology-driven industries.</p>', 1, '2024-04-29 08:33:47'),
+(50, ' گورنمنٹ ٹیکنیکل اینڈ ووکیشنل سنٹر (بوائز) گلبہار، پشاور میں جاب فیئر کا انعقاد', '<p>&nbsp;گورنمنٹ ٹیکنیکل اینڈ ووکیشنل سنٹر (بوائز) گلبہار، پشاور میں جاب فیئر کا انعقاد</p>', 1, '2024-04-29 08:39:33'),
 (51, 'Auto Mechanical Students Visit to Abid CNG 24 june, 2023', '', 1, '2024-05-02 04:48:49'),
 (52, 'Basic Computer Training held at GTVC (B) at 18 July, 2023', '', 1, '2024-05-02 04:49:31'),
 (53, 'Support Staff Perfforming Special Task of the Centre', '', 1, '2024-05-02 04:50:38'),
@@ -187,7 +189,7 @@ CREATE TABLE `pictures` (
 
 INSERT INTO `pictures` (`picture_id`, `event_id`, `picture`, `status`, `created_at`) VALUES
 (1, 1, 'Event1.jpg', 1, '2023-03-17 10:58:25'),
-(2, 2, 'Event1.jpg', 1, '2024-12-30 09:02:32'),
+(2, 1, '', 1, '2024-01-26 07:16:01'),
 (3, 2, 'imc-1.jpg', 1, '2023-03-17 10:59:06'),
 (4, 2, 'WhatsApp Image 2023-05-27 at 10.17.59 AM.jpeg', 1, '2024-01-30 06:33:28'),
 (5, 3, 'main-3.jpg', 1, '2023-03-17 11:02:37'),
@@ -317,7 +319,7 @@ INSERT INTO `pictures` (`picture_id`, `event_id`, `picture`, `status`, `created_
 (129, 33, 'WhatsApp Image 2023-07-22 at 9.09.08 AM (1).jpeg', 1, '2023-08-22 03:52:30'),
 (130, 34, 'WhatsApp Image 2023-08-01 at 7.59.29 PM.jpeg', 1, '2023-08-22 03:55:27'),
 (131, 34, 'WhatsApp Image 2023-08-01 at 7.59.30 PM.jpeg', 1, '2023-08-22 03:55:27'),
-(132, 35, 'WhatsApp Image 2023-08-16 at 12.19.27 PM.jpeg', 1, '2024-12-30 11:56:47'),
+(132, 35, 'WhatsApp Image 2023-08-16 at 12.19.27 PM.jpeg', 1, '2023-09-04 07:40:18'),
 (133, 36, 'WhatsApp Image 2023-09-18 at 1.11.43 PM (1).jpeg', 1, '2023-09-18 08:36:53'),
 (134, 36, 'WhatsApp Image 2023-09-18 at 1.11.43 PM.jpeg', 1, '2023-09-18 08:36:53'),
 (135, 36, 'WhatsApp Image 2023-09-18 at 1.12.07 PM.jpeg', 1, '2023-09-18 08:36:53'),
@@ -328,12 +330,12 @@ INSERT INTO `pictures` (`picture_id`, `event_id`, `picture`, `status`, `created_
 (140, 40, 'WhatsApp Image 2023-12-12 at 11.00.01 AM (1).jpeg', 1, '2023-12-16 07:40:54'),
 (141, 41, 'WhatsApp Image 2023-12-13 at 1.31.27 PM.jpeg', 1, '2023-12-16 07:41:59'),
 (142, 43, 'hh.png', 1, '2024-01-26 07:10:05'),
-(143, 44, 'WhatsApp Image 2024-01-30 at 10.00.43 AM.jpeg', 1, '2024-12-26 08:05:31'),
-(144, 44, 'WhatsApp Image 2024-01-30 at 10.00.46 AM (1).jpeg', 1, '2024-12-26 08:05:08'),
-(145, 44, 'WhatsApp Image 2024-01-30 at 10.00.46 AM.jpeg', 1, '2024-12-26 08:05:55'),
+(143, 44, 'forbidden.jpg', 1, '2024-06-16 08:42:35'),
+(144, 44, 'WhatsApp Image 2024-01-30 at 10.00.46 AM (1).jpeg', 1, '2024-01-30 05:23:00'),
+(145, 44, 'WhatsApp Image 2024-01-30 at 10.00.46 AM.jpeg', 1, '2024-01-30 05:23:00'),
 (146, 44, 'WhatsApp Image 2024-01-30 at 10.00.47 AM (1).jpeg', 1, '2024-01-30 05:23:00'),
 (147, 44, 'WhatsApp Image 2024-01-30 at 10.00.47 AM.jpeg', 1, '2024-01-30 05:23:00'),
-(148, 45, 'Event1.jpg', 1, '2024-12-26 08:03:10'),
+(148, 45, 'Report with Atlas Honda.docx', 1, '2024-02-20 04:27:45'),
 (149, 46, 'WhatsApp Image 2024-04-22 at 8.53.46 PM.jpeg', 1, '2024-04-23 08:44:40'),
 (150, 47, 'WhatsApp Image 2024-04-22 at 8.53.46 PM.jpeg', 1, '2024-04-23 08:44:42'),
 (151, 48, 'WhatsApp Image 2024-04-22 at 8.53.46 PM.jpeg', 1, '2024-04-23 08:45:14'),
@@ -383,9 +385,7 @@ INSERT INTO `pictures` (`picture_id`, `event_id`, `picture`, `status`, `created_
 (195, 56, 'WhatsApp Image 2023-05-27 at 10.18.01 AM.jpeg', 1, '2024-05-02 04:56:46'),
 (196, 57, 'WhatsApp Image 2024-05-04 at 7.14.38 PM.jpeg', 1, '2024-05-06 07:38:04'),
 (197, 57, 'WhatsApp Image 2024-05-04 at 7.14.39 PM.jpeg', 1, '2024-05-06 07:38:05'),
-(198, 57, 'WhatsApp Image 2024-05-04 at 7.14.41 PM.jpeg', 1, '2024-05-06 07:38:05'),
-(199, 58, 'Event1.jpg', 1, '2024-12-30 10:10:59'),
-(200, 58, 'course-01.jpg', 1, '2025-01-02 07:52:50');
+(198, 57, 'WhatsApp Image 2024-05-04 at 7.14.41 PM.jpeg', 1, '2024-05-06 07:38:05');
 
 -- --------------------------------------------------------
 
@@ -499,7 +499,7 @@ ALTER TABLE `leadership_profiles`
 -- AUTO_INCREMENT for table `pictures`
 --
 ALTER TABLE `pictures`
-  MODIFY `picture_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=201;
+  MODIFY `picture_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=199;
 --
 -- AUTO_INCREMENT for table `staff`
 --
