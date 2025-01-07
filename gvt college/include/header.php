@@ -28,7 +28,7 @@
             text-decoration: none;
             color: #333;
             transition: color 0.3s ease-in-out;
-            padding: 5px 2px;
+            padding: 5px 10px;
             /* Add padding for better click area */
         }
 
@@ -56,7 +56,6 @@
 
             .main-nav.active {
                 display: flex;
-                padding-left: 20px;
             }
 
             .nav-item {
