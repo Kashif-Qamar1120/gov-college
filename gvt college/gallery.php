@@ -28,7 +28,7 @@ require_once('../admin/process/conn.php');
     <link rel="stylesheet" href="assets/css/templatemo-edu-meeting.css">
     <link rel="stylesheet" href="assets/css/owl.css">
     <link rel="stylesheet" href="assets/css/lightbox.css">
-    <link rel="stylesheet" href="assets/css/gallerystyle.css">
+    <link rel="stylesheet" href="assets/css/gallery_style.css">
 <!--
 
 TemplateMo 569 Edu Meeting
@@ -36,6 +36,7 @@ TemplateMo 569 Edu Meeting
 https://templatemo.com/tm-569-edu-meeting
 
 -->
+
   </head>
 
 <body>
@@ -48,8 +49,8 @@ https://templatemo.com/tm-569-edu-meeting
 
 
 
-<div class="main-posts">
-    <div class="container">
+<div class="main-posts" style= "background-color: black;">
+    <div class="container" >
         <div class="gallery">
             <h1>GALLERY</h1>
             <p>
@@ -57,41 +58,33 @@ https://templatemo.com/tm-569-edu-meeting
             </p>
         </div>
         <div class="row">
-            <?php 
-            $query = "SELECT events.name, events.description, pictures.picture 
-            FROM events 
-            JOIN pictures ON events.id = pictures.event_id";
-            $excute = mysqli_query($conn, $query);
+    <?php 
+    $query = "SELECT events.name, events.description, pictures.picture 
+              FROM events 
+              JOIN pictures ON events.id = pictures.event_id";
+    $execute = mysqli_query($conn, $query);
 
-            $count = 0; // Counter to track columns
-            while ($record = mysqli_fetch_array($excute)) {
-                ?>
-                <div class="col-md-4 col-sm-6 post-masonry">
-                    <div class="post-thumb">
-                        <img src="../admin/uploads/albums/<?php echo $record['picture']?>" alt="">
-                        <div class="title-over">
-                            <h4><a href="#"><?php echo $record['name']; ?></a></h4>
-                        </div>
-                        <div class="post-hover text-center">
-                            <div class="inside">
-                                <i class="fa fa-plus"></i>
-                                <!-- <span class="date">25 Jan 2084</span> -->
-                                <h4><a href="#"><?php echo $record['description']; ?></a></h4>
-                                <!-- <p>Cum sociis natoque penatibus et magnis dis parturient</p> -->
-                            </div>
-                        </div>
+    while ($record = mysqli_fetch_array($execute)) {
+        ?>
+        <div class="col-md-4 col-sm-6 post-masonry">
+            <div class="post-thumb">
+                <img src="../admin/uploads/events/<?php echo $record['picture'] ?>" alt="Event Image">
+                <div class="title-over">
+                    <h4><a href="#"><?php echo $record['name']; ?></a></h4>
+                </div>
+                <div class="post-hover text-center">
+                    <div class="inside">
+                        <i class="fa fa-plus"></i>
+                        <h4><a href="#"><?php echo $record['description']; ?></a></h4>
                     </div>
                 </div>
-                <?php
-                $count++;
-
-                // Close and open a new row after every 3 columns
-                if ($count % 3 == 0) {
-                    echo '</div><div class="row">';
-                }
-            }
-            ?>
-        </div> <!-- End of last row -->
+            </div>
+        </div>
+        <?php
+    }
+    ?>
+</div>
+ <!-- End of last row -->
     </div>
 </div>
 

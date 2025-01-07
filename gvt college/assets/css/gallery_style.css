@@ -1,0 +1,91 @@
+/* General styling */
+body {
+    background-color: black;
+    color: white;
+}
+
+/* Gallery Section */
+.gallery h1 {
+    padding-top: 140px;
+    padding-bottom: 10px;
+    text-align: center;
+    color: white;
+}
+
+.gallery p {
+    padding-bottom: 20px;
+    text-align: center;
+    color: white;
+}
+
+.main-posts {
+    position: relative;
+    z-index: 6;
+    padding: 50px 0;
+}
+
+/* Card Styling */
+.post-masonry {
+    margin-bottom: 30px;
+}
+
+.post-masonry .post-thumb {
+    width: 100%;
+    height: 300px; /* Fixed height for uniformity */
+    border: 10px solid #fff;
+    overflow: hidden;
+    position: relative;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.post-masonry .post-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image fits properly without distortion */
+    display: block;
+}
+
+.post-masonry .post-thumb .title-over {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 15px;
+    color: white;
+    text-align: center;
+}
+
+.post-masonry .post-thumb .post-hover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.post-masonry .post-thumb:hover .post-hover {
+    visibility: visible;
+    opacity: 1;
+}
+
+.post-masonry .post-thumb .post-hover .inside {
+    text-align: center;
+    color: white;
+}
+
+.post-masonry .post-thumb .post-hover i {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: white;
+}
