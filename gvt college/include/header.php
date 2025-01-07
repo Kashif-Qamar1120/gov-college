@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+                    <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -54,7 +54,6 @@
 
             .main-nav.active {
                 display: flex;
-                padding-left: 20px;
             }
 
             .nav-item {
