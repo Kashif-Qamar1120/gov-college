@@ -1,4 +1,4 @@
-                    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -116,18 +116,6 @@
             display: none;
         }
 
-<<<<<<< HEAD
-        .main-nav {
-            display: flex;
-            gap: 10px;
-        }
-
-        .nav-item a {
-            text-decoration: none;
-            color: #333;
-            transition: color 0.3s ease-in-out;
-            padding: 5px 2px;
-=======
         .menu-list .cancel-btn {
             position: absolute;
             right: 30px;
@@ -140,7 +128,6 @@
             .content {
                 padding: 0 60px;
             }
->>>>>>> fe00e0726e6eb8b3a3703973a02165655a98dbf1
         }
 
         @media (max-width: 1100px) {
@@ -277,6 +264,7 @@
             }
         }
     </style>
+
 </head>
 
 
@@ -284,35 +272,6 @@
     <header class="header-area header-sticky ">
         <div class="container-fluid">
             <div class="row align-items-center">
-<<<<<<< HEAD
-                <div class="col-6 col-lg-4 d-flex align-items-center">
-                    <img src="./assets/images/left-logo2.png" alt="Edu Meeting Logo" class="logo img-fluid mx-2"
-                        style="width: 50px; height: 50px;">
-                    <h2 class="mb-0 text-primary">GPI Ekka Ghund</h2>
-                    <img src="./assets/images/right-logo1.png" alt="Edu Meeting Logo" class="logo img-fluid mx-2"
-                        style="width: 50px; height: 50px;">
-                </div>
-                <div class="col-6 col-lg-8 text-end">
-                    <span class="menu-trigger" id="menu-trigger">&#9776; Menu</span>
-                    <nav class="main-nav bg-white" id="main-nav">
-                        <ul class="nav flex-column flex-lg-row">
-                            <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
-                            <li class="nav-item"><a href="about.php" class="nav-link">About Us</a></li>
-                            <li class="nav-item"><a href="events.php" class="nav-link">News & Events</a></li>
-                            <li class="nav-item"><a href="staff.php" class="nav-link">Our Staff</a></li>
-                            <li class="nav-item"><a href="gallery.php" class="nav-link">Gallery</a></li>
-                            <li class="nav-item"><a href="contact.php" class="nav-link">Contact Us</a></li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="downloadsDropdown" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false">Downloads</a>
-                                <ul class="dropdown-menu" aria-labelledby="downloadsDropdown">
-                                    <li><a class="dropdown-item" href="meetings.php">Admission Form</a></li>
-                                    <li><a class="dropdown-item" href="meeting1-details.php">Chalan Slip</a></li>
-                                    <li><a class="dropdown-item" href="./courses.php">Courses Outline</a></li>
-                                    <li><a class="dropdown-item" href="meeting1-details.php">Results</a></li>
-                                </ul>
-                            </li>
-=======
                 <nav class="navbar">
                     <div class="content">
                         <h2 style="font-size:15px;">GPI EKKA GHUND</h2>
@@ -350,7 +309,6 @@
         </ul>
     </li>
 </ul>
->>>>>>> fe00e0726e6eb8b3a3703973a02165655a98dbf1
                         </ul>
 
                         <div class="icon menu-btn">
@@ -362,30 +320,6 @@
         </div>
     </header>
 
-<<<<<<< HEAD
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const menuTrigger = document.getElementById('menu-trigger');
-            const mainNav = document.getElementById('main-nav');
-
-            menuTrigger.addEventListener('click', () => {
-                mainNav.classList.toggle('active');
-                menuTrigger.innerHTML = mainNav.classList.contains('active') ? '✖ Close' : '&#9776; Menu';
-            });
-
-            const navLinks = mainNav.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    if (mainNav.classList.contains('active')) {
-                        mainNav.classList.remove('active');
-                        menuTrigger.innerHTML = '&#9776; Menu';
-                    }
-                });
-            });
-        });
-    </script>
-=======
     <script src="index.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
@@ -486,7 +420,6 @@
         background-color: #f0f0f0;
     }
 </style>
->>>>>>> fe00e0726e6eb8b3a3703973a02165655a98dbf1
 </body>
 
 </html>
