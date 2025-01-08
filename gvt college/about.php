@@ -41,7 +41,7 @@ https://templatemo.com/tm-569-edu-meeting
 <?php include './include/header.php'?>
 <section class="meetings-page" id="meetings">
   <!-- About Us section -->
-  <div class="px-6 pt-32 main-container ">
+  <div class="px-6 main-container ">
 
     <section id="about-us"
       class="flex flex-col p-0 border border-gray-300 rounded-md shadow-md shadow-gray-300 " >

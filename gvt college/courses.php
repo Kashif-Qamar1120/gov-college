@@ -28,7 +28,7 @@ if (!$execute) {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Education - List of Courses</title>
+    <title>Education</title>
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/fontawesome.css">
     <link rel="stylesheet" href="assets/css/templatemo-edu-meeting.css">
@@ -41,6 +41,9 @@ if (!$execute) {
 
 <section class="meetings-page" id="meetings">
     <div class="container">
+    <div class="heading" style= "color: white; text-align: center;">
+        <h1>COURSES</h1>
+    </div>
         <div class="row">
             <div class="col-lg-12">
                 <div class="filters">
