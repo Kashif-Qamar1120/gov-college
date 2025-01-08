@@ -87,9 +87,9 @@ if (!$execute) {
             </div>
         </div>
     </div>
+    <?php include './include/footer.php'; ?>
 </section>
 
-<?php include './include/footer.php'; ?>
 
 <!-- Scripts -->
 <script src="vendor/jquery/jquery.min.js"></script>

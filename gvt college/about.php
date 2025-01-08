@@ -34,18 +34,17 @@ https://templatemo.com/tm-569-edu-meeting
 
 </head>
 
-<header>
-<?php
-  include './include/header.php'
-  ?>
-</header>
-<body style="    background-color: #181818;">
 
+
+
+<body>
+<?php include './include/header.php'?>
+<section class="meetings-page" id="meetings">
   <!-- About Us section -->
   <div class="px-6 pt-32 main-container ">
 
     <section id="about-us"
-      class="flex flex-col p-0 border border-gray-300 rounded-md shadow-md shadow-gray-300 " style="    background-color: #181818;">
+      class="flex flex-col p-0 border border-gray-300 rounded-md shadow-md shadow-gray-300 " >
 
       <div class="flex items-center justify-center  pt-4 border-b border-gray-300 heading">
         <h1 class="text-lg font-extrabold text-white pt-4">About Us</h1>
@@ -197,6 +196,7 @@ https://templatemo.com/tm-569-edu-meeting
   <?php
   include './include/footer.php'
   ?>
+</section>
 </body>
 
 </html>

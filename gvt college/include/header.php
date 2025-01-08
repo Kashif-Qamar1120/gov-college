@@ -78,7 +78,7 @@
             margin-left: 20px;
             text-decoration: none;
             transition: all 0.3s ease;
-            color: black;
+            color: black; 
 
         }
 
@@ -95,6 +95,7 @@
             bottom: -8px;
             left: 22px;
             transition: 0.3s linear;
+            
         }
 
         .navbar ul li:hover::after {
@@ -403,24 +404,24 @@
     <style>
         ul {
             padding: 0;
-            margin: 0;
+            margin: 0; 
         }
 
         .has-sub a {
             font-family: Arial, sans-serif;
             font-size: 14px;
             font-weight: bold;
-            color: #000;
+            color: #000; 
         }
 
         .sub-menu li {
             list-style: none;
-            padding: 0;
+            padding: 0; 
         }
 
         .sub-menu li a {
             text-decoration: none;
-            color: #000;
+            color: #000; 
         }
 
         .sub-menu li a:hover {

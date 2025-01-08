@@ -143,11 +143,11 @@ https://templatemo.com/tm-569-edu-meeting
         </div>
       </div>
     </div>
-  </section>
-
   <?php 
    include './include/footer.php'
    ?>
+  </section>
+
 
 </body>
 </html>
