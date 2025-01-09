@@ -77,11 +77,13 @@ require_once('../admin/process/conn.php');
   /* object-fit: cover; */
   border-radius: 8px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+ 
 }
 
 .card-body img:hover {
-  transform: scale(1.1);
+  transform: scale(1.9,1.9);
   box-shadow: 0 4px 12px rgba(255, 255, 255, 0.4);
+  transition:transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 </style>
