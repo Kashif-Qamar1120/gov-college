@@ -274,7 +274,7 @@
                     <div class="d-flex col-12">
                         <div class="content">
                             <div class=" d-flex">
-                                <h2 class="fs-3 fw-bold ">GPI EKKA GHUND</h2>
+                                <h2 class="fs-3 fw-bold">GPI EKKA GHUND</h2>
                                 <div class="logo mx-4">
                                     <img src="./assets/images/right-logo1.png" alt="">
                                 </div>

@@ -47,7 +47,7 @@ https://templatemo.com/tm-569-edu-meeting
       class="flex flex-col p-0 border border-gray-300 rounded-md shadow-md shadow-gray-300 " >
 
       <div class="flex items-center justify-center  pt-4 border-b border-gray-300 heading">
-        <h1 class="text-lg font-extrabold text-white pt-4">About Us</h1>
+        <h1 class="text-lg font-extrabold text-white pt-4 text-center">About Us</h1>
       </div>
 
 
