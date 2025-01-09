@@ -77,7 +77,7 @@ https://templatemo.com/tm-569-edu-meeting
 
 <section class="contact-us" id="contact">
 <div style= "text-align: center; padding-top: 30px; color: white;">
-  <h1>CONTANT</h1>
+  <h1>CONTACT</h1>
  </div>
     <div class="container">
       <div class="row">
