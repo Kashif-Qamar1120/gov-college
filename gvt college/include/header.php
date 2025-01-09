@@ -296,7 +296,7 @@
                                 
                                 <!-- Menus Dropdown -->
                                     <li class="has-sub" id="downloads-button1" style=" display: inline-block;">
-                                        <a href="javascript:void(0);" onclick="toggleSubMenu1()" style="text-decoration: none;  display: inline-block;">Menus</a>
+                                        <a href="javascript:void(0);" onclick="toggleSubMenu1()" style="text-decoration: none;  display: inline-block;">Gallery</a>
                                         <ul class="sub-menu" id="sub-menu1" style="display: none; width: 120px; position: absolute; background: #fff; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); margin: 0; padding: 0;">
                                             <li><a href="gallery.php" style="font-size: 10px; padding: 7px; display: block; text-align: left;">Gallery</a></li>
                                             <li><a href="events.php" style="font-size: 10px; padding: 7px; display: block; text-align: left;">News and Events</a></li>
